@@ -10,7 +10,7 @@ Feedback / Questions / Bugs to report? File [issues](https://github.com/Microsof
 # Getting Started
 * Read the [Getting started as a Microsoft security developer whitepaper](https://aka.ms/securitydevwhitepaper)
 
-# APIs, Services and Community
+# Discover APIs and Services  
 <table BORDER="1" CELLPADDING="10">
     <thead>
         <col>
