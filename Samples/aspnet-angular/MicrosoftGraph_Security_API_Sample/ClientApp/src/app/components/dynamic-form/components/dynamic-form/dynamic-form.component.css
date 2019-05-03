@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    width: 343px;
+    height: 100%;
+    background: white;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+:host>form {
+    margin: 22px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 44px);
+}
+
+:host>form>.form-field:not(:last-child) {
+    margin-bottom: 10px;
+}

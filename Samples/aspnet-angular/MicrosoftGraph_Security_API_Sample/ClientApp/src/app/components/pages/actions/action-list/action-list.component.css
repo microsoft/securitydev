@@ -1,0 +1,36 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.list-header {
+    display: flex;
+    border-bottom: 1px solid #E9E9E9;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.list-header>.column {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: SegoeUI;
+    font-size: 12px;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-right: 10px;
+}
+
+.list-header>.column:first-child {
+    padding-left: 13px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    width: 15px;
+    flex-shrink: 0;
+}

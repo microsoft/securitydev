@@ -1,0 +1,3 @@
+<div class="title">{{ title }}</div>
+<div class="value" [ngClass]="{'clickable': clickable && value}" (click)="onClick()">
+    {{ (value | date : 'M/d/yyyy, h:mm a') || 'No data' }}</div>

@@ -1,0 +1,73 @@
+:host {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    background: white;
+}
+
+:host>label {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: #2D2D2D;
+    margin-bottom: 7px;
+    text-transform: capitalize;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 26px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 10px;
+    text-transform: capitalize;
+}
+
+.main:hover {
+    cursor: pointer;
+    background: #E5F0F8;
+}
+
+.main>svg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: transform .1s ease-in-out;
+}
+
+.main.expanded>svg {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
+.dropdowm-item-container {
+    position: absolute;
+    top: 100%;
+    width: calc(100% - 2px);
+    overflow: hidden;
+    background: white;
+    border: 1px solid #CCCCCC;
+    z-index: 1;
+}
+
+.dropdowm-item-container .dropdowm-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: #000000;
+    padding: 0 12px;
+    text-transform: capitalize;
+}
+
+.dropdowm-item-container .dropdowm-item:hover {
+    cursor: pointer;
+    background: #E5F0F8;
+}

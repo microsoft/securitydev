@@ -1,0 +1,6 @@
+<div class="title">{{ title }}</div>
+<div class="value">
+    <app-radio *ngIf="value"></app-radio>
+    <div [title]="value || ''" [ngClass]="{'clickable': clickable && value}" (click)="onClick()">
+        {{ value || 'No data' }}</div>
+</div>

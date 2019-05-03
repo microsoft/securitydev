@@ -1,0 +1,53 @@
+:host {
+    display: flex;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.checkbox-container:hover {
+    cursor: pointer;
+}
+
+.checkbox-container>.check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    background-color: white;
+    -webkit-transition: background-color .2s linear;
+    -ms-transition: background-color .2s linear;
+    transition: background-color .2s linear;
+}
+
+.checkbox-container>.check.checked {
+    border: 2px solid #0078D7;
+    background: #0078D7;
+}
+
+.checkbox-container>.level-container {
+    margin: 0 15px 0 19px;
+}
+
+.checkbox-container>label {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 19px;
+    text-transform: capitalize;
+}
+
+.checkbox-container>label+.level-container {
+    margin-left: 0;
+}

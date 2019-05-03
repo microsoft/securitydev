@@ -1,0 +1,4 @@
+<div class="initials" *ngIf="!user.picture" [ngStyle]="{'font-size.px': fontSize}">
+    {{ getInitials() }}
+</div>
+<img *ngIf="user.picture" [src]="user.picture" />

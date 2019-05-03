@@ -1,0 +1,9 @@
+<app-expandable-list [title]="title" [isExpanded]="isExpanded">
+    <header class="list-header">
+        <div style="flex: 1;" class="column">Name</div>
+        <div style="flex: 1;" class="column">Type</div>
+        <div style="flex: 2;" class="column">Value</div>
+    </header>
+    <app-trigger-item *ngFor="let item of items" [item]="item" (valueClick)="onValueClick($event)">
+    </app-trigger-item>
+</app-expandable-list>

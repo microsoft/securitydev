@@ -1,0 +1,4 @@
+<div class="title">{{ title }}</div>
+<div class="value" [title]="value || ''" [ngClass]="{'clickable': clickable && value, 'untouched': !cropInlineText}"
+    (click)="onClick()">
+    {{ value || 'No data' }}</div>

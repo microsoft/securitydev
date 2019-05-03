@@ -1,0 +1,86 @@
+:host {
+    display: flex;
+    overflow: hidden;
+    width: 343px;
+    height: 100%;
+    background: white;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+}
+
+.filters {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 326px;
+    height: 65px;
+    padding-bottom: 15px;
+    flex-shrink: 0;
+    font-family: SegoeUI;
+    font-size: 20px;
+    color: #2D2D2D;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.filters>svg {
+    margin: 2px 6px 4px 15px;
+}
+
+:host>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+:host>form>perfect-scrollbar {
+    flex-grow: 1;
+}
+
+:host>form .form-row,
+:host>form .form-actions {
+    padding: 13px 15px;
+}
+
+:host>form .form-row:not(:last-child) {
+    border-bottom: 1px solid #E9E9E9;
+}
+
+:host>form .form-row .form-row {
+    border-bottom: none;
+    padding: 0px;
+}
+
+:host>form .form-row .form-row:not(:last-child) {
+    padding-bottom: 13px;
+}
+
+:host>form .form-row .form-field:not(:last-child) {
+    margin-bottom: 13px;
+}
+
+:host>form .form-actions {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #E9E9E9;
+}
+
+:host>form .form-actions .submit,
+:host>form .form-actions .cancel {
+    width: 146px;
+}
+
+:host>form .form-actions .cancel {
+    background: rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+:host>form .form-actions .cancel:hover {
+    background: rgba(0, 0, 0, 0.1) !important;
+}

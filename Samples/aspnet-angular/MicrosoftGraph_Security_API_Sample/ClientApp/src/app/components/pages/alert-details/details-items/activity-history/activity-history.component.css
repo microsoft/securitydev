@@ -1,0 +1,7 @@
+:host {
+    display: flex;
+}
+
+:host app-activity-history-item:not(:last-child) {
+    margin-bottom: 15px;
+}

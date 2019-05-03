@@ -1,0 +1,48 @@
+:host {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+:host(:hover) {
+    cursor: pointer;
+}
+
+:host>label {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 19px;
+    text-transform: capitalize;
+}
+
+.radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 999px;
+    margin-right: 10px;
+    -webkit-transition: background-color .2s linear;
+    -ms-transition: background-color .2s linear;
+    transition: background-color .2s linear;
+}
+
+.radio.checked {
+    border-color: #0078D7;
+}
+
+.radio>div {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.8);
+}

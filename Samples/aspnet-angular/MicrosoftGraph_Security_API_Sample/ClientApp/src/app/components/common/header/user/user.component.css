@@ -1,0 +1,16 @@
+.header-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.header-user-container:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.header-user-container:active {
+    background: rgba(255, 255, 255, 0.03);
+}

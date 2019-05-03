@@ -1,0 +1,9 @@
+<app-expandable-list [title]="title" [isExpanded]="isExpanded">
+    <header class="list-header">
+        <div class="column">Destination Service Name</div>
+        <div class="column">Destination Service IP</div>
+        <div class="column">Risk Score</div>
+    </header>
+    <app-cloud-app-state-item *ngFor="let item of items" [item]="item" (valueClick)="onValueClick($event)">
+    </app-cloud-app-state-item>
+</app-expandable-list>

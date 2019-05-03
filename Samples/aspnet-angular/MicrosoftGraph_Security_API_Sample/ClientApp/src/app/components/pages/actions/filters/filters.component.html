@@ -1,0 +1,66 @@
+<div class="title filters">
+    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M0 0.125H18V2.0498L11.25 8.7998V15.875H6.75V8.7998L0 2.0498V0.125ZM16.875 1.5752V1.25H1.125V1.5752L7.875 8.3252V14.75H10.125V8.3252L16.875 1.5752Z"
+            fill="#0078D7" />
+    </svg>
+    filters
+</div>
+<form [formGroup]="filtersForm" (ngSubmit)="applyFilters()">
+    <perfect-scrollbar fxFlex>
+        <!-- #region action-filters  -->
+        <!-- #region action:name -->
+        <div class="form-row">
+            <app-expandable-list title="Type" isExpanded="true">
+                <app-checkbox-group formControlName="action:name" [items]="filterData['action:name']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion action:name -->
+        <!-- #region action:target -->
+        <div class="form-row">
+            <app-expandable-list title="Target" isExpanded="true">
+                <app-checkbox-group formControlName="action:target" [items]="filterData['action:target']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion action:target -->
+        <!-- #region action:status -->
+        <div class="form-row">
+            <app-expandable-list title="Status" isExpanded="true">
+                <app-checkbox-group formControlName="action:status" [items]="filterData['action:status']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion action:status -->
+        <!-- #region action:provider -->
+        <div class="form-row">
+            <app-expandable-list title="Provider" isExpanded="true">
+                <app-checkbox-group formControlName="action:provider" [items]="filterData['action:provider']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion action:provider -->
+        <!-- #region action:submitted-date-time -->
+        <div class="form-row">
+            <app-expandable-list title="Submitted Time Ranges" isExpanded="true">
+                <div class="form-field">
+                    <app-datetime-picker formControlName="action:submittedstartdatetime" title="Start Date Time"
+                        placeholder="Select date and time" [max]="max"></app-datetime-picker>
+                </div>
+                <div class="form-field">
+                    <app-datetime-picker formControlName="action:submittedenddatetime" title="End Date Time"
+                        placeholder="Select date and time" [min]="min"></app-datetime-picker>
+                </div>
+            </app-expandable-list>
+        </div>
+        <!--#endregion submitted-date-time -->
+        <!--#endregion action-filters -->
+
+    </perfect-scrollbar>
+    <div class="form-actions">
+        <app-button class="submit" title="Apply Filters" (btnClick)="applyFilters()" [disabled]="!filtersForm.valid">
+        </app-button>
+        <app-button class="cancel" title="Clear Filters" (btnClick)="clearFilters()"></app-button>
+    </div>
+</form>

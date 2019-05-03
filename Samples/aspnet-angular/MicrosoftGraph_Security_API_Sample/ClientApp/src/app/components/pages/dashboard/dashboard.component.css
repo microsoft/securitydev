@@ -1,0 +1,101 @@
+:host {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+header {
+    color: black;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: 500;
+}
+
+.header-title {
+    font-family: SegoeUI;
+    font-size: 20px;
+    color: #2D2D2D;
+    margin-top: 7px;
+    text-transform: capitalize;
+}
+
+.content-page {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.content-header {
+    color: #2D2D2D;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex: 3;
+    margin-right: 30px;
+}
+
+.center-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.center-content>* {
+    display: flex;
+}
+
+.by-entity {
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.by-entity>* {
+    display: flex;
+}
+
+.entity-list {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1px;
+    margin-bottom: 20px;
+}
+
+.entity-list>header {
+    display: flex;
+    height: 30px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.entity-list>header:first-child {
+    margin-top: 0px;
+}
+
+.right-content {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+}
+
+.content-page app-secure-score-chart {
+    display: flex;
+    margin-top: 20px;
+}
+
+.scrollable-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-scroll {
+    flex-grow: 1;
+}

@@ -1,0 +1,13 @@
+<header class="container-header">{{ title }}</header>
+<header class="list-header">
+    <div style="flex: 3" class="column">Title</div>
+    <div style="flex: 1; max-width: 120px;" class="column">Severity</div>
+    <div style="flex: 1; max-width: 100px;" class="column">Status</div>
+    <div style="flex: 1" class="column">Category</div>
+    <div style="flex: 2; max-width: 150px;" class="column">Create Date Time</div>
+    <div style="flex: 2" class="column">AssignedTo</div>
+    <div style="flex: 2" class="column">Provider</div>
+</header>
+<perfect-scrollbar fxFlex>
+    <app-alert-item *ngFor="let alert of alerts" [item]="alert" (itemSelect)="itemSelect($event)"></app-alert-item>
+</perfect-scrollbar>

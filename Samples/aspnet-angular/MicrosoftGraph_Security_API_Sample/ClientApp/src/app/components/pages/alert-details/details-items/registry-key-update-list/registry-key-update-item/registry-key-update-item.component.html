@@ -1,0 +1,36 @@
+<div class="column">
+    <app-clickable-property title="Hive" [value]="item.hive" filterKey="regkeyupdate:hive"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Operation" [value]="item.operation" filterKey="regkeyupdate:operation"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Process ID" [value]="item.processId" filterKey="regkeyupdate:processid"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Value type" [value]="item.valueType" filterKey="regkeyupdate:valuetype"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+</div>
+<div class="column">
+    <app-clickable-property title="Old key" [value]="item.oldKey" filterKey="regkeyupdate:oldkey"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Old value name" [value]="item.oldValueName" filterKey="regkeyupdate:oldvaluename"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Old value data" [value]="item.oldValueData" filterKey="regkeyupdate:oldvaluedata"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+</div>
+<div class="column">
+    <app-clickable-property title="Key" [value]="item.key" filterKey="regkeyupdate:key"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Value name" [value]="item.valueName" filterKey="regkeyupdate:valuename"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Value data" [value]="item.valueData" filterKey="regkeyupdate:valuedata"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+</div>

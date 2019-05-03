@@ -1,0 +1,7 @@
+<div class="bar" *ngIf="chart">
+  <google-chart style="width: 92%;" #barChart [type]="chart.type" [data]="chart.data" [options]="chart.options">
+  </google-chart>
+  <div class="values">
+    <span *ngFor="let value of values" class="value" [ngStyle]="{'top': value.style}">{{ value.value }}</span>
+  </div>
+</div>

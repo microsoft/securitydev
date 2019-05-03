@@ -1,0 +1,33 @@
+:host {
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.form-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    z-index: 1;
+    width: 340px;
+    position: relative;
+}
+
+.form-container>svg {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}

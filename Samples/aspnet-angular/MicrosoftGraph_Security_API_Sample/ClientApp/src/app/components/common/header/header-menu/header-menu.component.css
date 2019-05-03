@@ -1,0 +1,21 @@
+:host {
+    width: 40px;
+    height: 40px;
+}
+
+:host>div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+:host(:hover) {
+    background: rgba(255, 255, 255, 0.07);
+    cursor: pointer;
+}
+
+:host(:active) {
+    background: rgba(255, 255, 255, 0.03);
+}

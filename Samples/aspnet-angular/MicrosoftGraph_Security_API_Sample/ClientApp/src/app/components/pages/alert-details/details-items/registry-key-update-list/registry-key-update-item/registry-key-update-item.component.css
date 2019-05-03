@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    flex-grow: 1;
+}
+
+:host(:nth-child(even)) {
+    background: #F6F6F6;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.column:not(:last-child) {
+    margin-right: 10px;
+}
+
+.column>*:not(:last-child) {
+    margin-bottom: 15px;
+}

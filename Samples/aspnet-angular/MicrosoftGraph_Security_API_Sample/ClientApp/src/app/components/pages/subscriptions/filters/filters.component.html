@@ -1,0 +1,60 @@
+<div class="title filters">
+    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M0 0.125H18V2.0498L11.25 8.7998V15.875H6.75V8.7998L0 2.0498V0.125ZM16.875 1.5752V1.25H1.125V1.5752L7.875 8.3252V14.75H10.125V8.3252L16.875 1.5752Z"
+            fill="#0078D7" />
+    </svg>
+    filters
+</div>
+<form [formGroup]="filtersForm" (ngSubmit)="applyFilters()">
+    <perfect-scrollbar fxFlex>
+        <!-- #region subscription-filters  -->
+        <!-- #region subscription:severity -->
+        <div class="form-row">
+            <app-expandable-list title="Severity" isExpanded="true">
+                <app-checkbox-group formControlName="subscription:severity"
+                    [items]="filterData['subscription:severity']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion subscription:target -->
+        <!-- #region subscription:status -->
+        <div class="form-row">
+            <app-expandable-list title="Status" isExpanded="true">
+                <app-checkbox-group formControlName="subscription:status" [items]="filterData['subscription:status']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion subscription:status -->
+        <!-- #region subscription:resource -->
+        <div class="form-row">
+            <app-expandable-list title="Resource" isExpanded="true">
+                <app-textfield type="text" formControlName="subscription:resource" vertical="true"
+                    placeholder="Enter resource query">
+                </app-textfield>
+            </app-expandable-list>
+        </div>
+        <!--#endregion subscription:resource -->
+        <!-- #region subscription:created-date-time -->
+        <div class="form-row">
+            <app-expandable-list title="Created Date Time Ranges" isExpanded="true">
+                <div class="form-field">
+                    <app-datetime-picker formControlName="subscription:expirationstartdatetime" title="Start Date Time"
+                        placeholder="Select date and time" [max]="max"></app-datetime-picker>
+                </div>
+                <div class="form-field">
+                    <app-datetime-picker formControlName="subscription:expirationenddatetime" title="End Date Time"
+                        placeholder="Select date and time" [min]="min"></app-datetime-picker>
+                </div>
+            </app-expandable-list>
+        </div>
+        <!--#endregion subscription:created-date-time -->
+        <!--#endregion subscription-filters -->
+
+    </perfect-scrollbar>
+    <div class="form-actions">
+        <app-button class="submit" title="Apply Filters" (btnClick)="applyFilters()" [disabled]="!filtersForm.valid">
+        </app-button>
+        <app-button class="cancel" title="Clear Filters" (btnClick)="clearFilters()"></app-button>
+    </div>
+</form>

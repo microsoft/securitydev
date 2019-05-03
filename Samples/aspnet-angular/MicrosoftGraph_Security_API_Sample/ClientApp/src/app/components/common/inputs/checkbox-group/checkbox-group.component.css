@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+:host>label {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: #2D2D2D;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+:host app-checkbox-group-item:not(:last-child) {
+    margin-bottom: 19px;
+}
+
+:host .expand-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+    height: 10px;
+}
+
+:host .expand-icon:hover {}

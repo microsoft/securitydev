@@ -1,0 +1,18 @@
+<app-doughnut-chart [data]="statusValues"></app-doughnut-chart>
+<div class="statuses">
+
+  <div class="operationStatus-sum">
+    <p class="operation-status">{{alertByStatus.statusName}}</p>
+    <p class="sum">{{sumValue}}</p>
+  </div>
+
+  <div class="status-labels">
+    <p>High</p>
+    <p>Medium</p>
+    <p>Low</p>
+    <p>Informational</p>
+  </div>
+
+  <app-severity-levels-alerts [values]="values" [direction]="column"></app-severity-levels-alerts>
+
+</div>

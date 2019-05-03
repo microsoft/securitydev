@@ -1,0 +1,157 @@
+<div class="page-content" *ngIf="alertDetails">
+    <!-- #region header -->
+    <app-content-header [title]="title" [breadcrumbItems]="breadcrumbItems">
+        <app-alert-details-header [title]="alertDetails.title" [severity]="alertDetails.severity"
+            [status]="alertDetails.status"></app-alert-details-header>
+    </app-content-header>
+    <!--#endregion header -->
+
+    <!-- #region main-panel -->
+    <app-alert-details-main-info [alertDetails]="alertDetails" (valueClick)="filterAlert($event)">
+    </app-alert-details-main-info>
+    <!--#endregion main-panel -->
+
+    <!-- #region scrollable-detail-list -->
+    <perfect-scrollbar fxFlex>
+        <div class="scrollable-content-container">
+
+            <!-- #region detection-ids -->
+            <div *ngIf="alertDetails.detectionIds && alertDetails.detectionIds.length" class="list-item">
+                <app-alert-string-list title="Detection IDs" [items]="alertDetails.detectionIds"
+                    filterKey="detection:id" (valueClick)="filterAlert($event)">
+                </app-alert-string-list>
+            </div>
+            <!-- #endregion detection-ids -->
+
+            <!-- #region cloud-app-states -->
+            <div *ngIf="alertDetails.cloudAppStates && alertDetails.cloudAppStates.length" class="list-item">
+                <app-cloud-app-state-list [items]="alertDetails.cloudAppStates" (valueClick)="filterAlert($event)"
+                    (addAction)="setActionInfo($event)">
+                </app-cloud-app-state-list>
+            </div>
+            <!-- #endregion cloud-app-states -->
+
+            <!-- #region vulnerability-states -->
+            <div *ngIf="alertDetails.vulnerabilityStates && alertDetails.vulnerabilityStates.length" class="list-item">
+                <app-vulnerability-state-list [items]="alertDetails.vulnerabilityStates"
+                    (valueClick)="filterAlert($event)" (addAction)="setActionInfo($event)">
+                </app-vulnerability-state-list>
+            </div>
+            <!-- #endregion vulnerability-states -->
+
+            <!-- #region tags -->
+            <div *ngIf="alertDetails.tags && alertDetails.tags.length" class="list-item">
+                <app-alert-string-list title="Tags" [items]="alertDetails.tags" filterKey="tag:title"
+                    (valueClick)="filterAlert($event)">
+                </app-alert-string-list>
+            </div>
+            <!-- #endregion tags -->
+
+            <!-- #region source-materials -->
+            <div *ngIf="alertDetails.sourceMaterials && alertDetails.sourceMaterials.length" class="list-item">
+                <app-url-list title="Source Materials" [items]="alertDetails.sourceMaterials">
+                </app-url-list>
+            </div>
+            <!-- #endregion source-materials -->
+
+            <!-- #region malware-states -->
+            <div *ngIf="alertDetails.malwareStates && alertDetails.malwareStates.length" class="list-item">
+                <app-malware-state-list [items]="alertDetails.malwareStates" (valueClick)="filterAlert($event)"
+                    (addAction)="setActionInfo($event)">
+                </app-malware-state-list>
+            </div>
+            <!-- #endregion malware-states -->
+
+            <!-- #region app-registry-key-updates -->
+            <div *ngIf="alertDetails.registryKeyUpdates && alertDetails.registryKeyUpdates.length" class="list-item">
+                <app-registry-key-update-list [items]="alertDetails.registryKeyUpdates"
+                    (valueClick)="filterAlert($event)" (addAction)="setActionInfo($event)">
+                </app-registry-key-update-list>
+            </div>
+            <!-- #endregion app-registry-key-updates -->
+
+            <!-- #region processes -->
+            <div *ngIf="alertDetails.processes && alertDetails.processes.length" class="list-item">
+                <app-process-list [items]="alertDetails.processes" (valueClick)="filterAlert($event)"
+                    (addAction)="setActionInfo($event)">
+                </app-process-list>
+            </div>
+            <!-- #endregion processes -->
+
+            <!-- #region triggers -->
+            <div *ngIf="alertDetails.triggers && alertDetails.triggers.length" class="list-item">
+                <app-trigger-list [items]="alertDetails.triggers" (valueClick)="filterAlert($event)"
+                    (addAction)="setActionInfo($event)">
+                </app-trigger-list>
+            </div>
+            <!-- #endregion triggers -->
+
+            <!-- #region network-connections -->
+            <div *ngIf="alertDetails.networkConnections && alertDetails.networkConnections.length" class="list-item">
+                <app-network-connection-list [connections]="alertDetails.networkConnections"
+                    (valueClick)="filterAlert($event)" (addAction)="setActionInfo($event)">
+                </app-network-connection-list>
+            </div>
+            <!-- #endregion network-connections -->
+
+            <!-- #region  hosts -->
+            <div *ngIf="alertDetails.hosts && alertDetails.hosts.length" class="list-item">
+                <app-host-list [hosts]="alertDetails.hosts" (valueClick)="filterAlert($event)">
+                </app-host-list>
+            </div>
+            <!-- #endregion hosts -->
+
+            <!-- #region  users -->
+            <div *ngIf="alertDetails.userAccountDevices && alertDetails.userAccountDevices.length" class="list-item">
+                <app-user-list [users]="alertDetails.userAccountDevices" (valueClick)="filterAlert($event)">
+                </app-user-list>
+            </div>
+            <!-- #endregion users -->
+
+            <!-- #region files -->
+            <div *ngIf="alertDetails.files && alertDetails.files.length" class="list-item">
+                <app-file-list [items]="alertDetails.files" (valueClick)="filterAlert($event)"></app-file-list>
+            </div>
+            <!-- #endregion files -->
+
+            <!-- #region comments -->
+            <div *ngIf="alertDetails.comments && alertDetails.comments.length" class="list-item">
+                <app-alert-string-list title="comments" [items]="alertDetails.comments" [clickable]="false">
+                </app-alert-string-list>
+            </div>
+            <!-- #endregion comments -->
+
+            <!-- #region recommended-actions -->
+            <div *ngIf="alertDetails.recommendedActions && alertDetails.recommendedActions.length" class="list-item">
+                <app-alert-string-list title="Recommended actions" [items]="alertDetails.recommendedActions" [clickable]="false">
+                </app-alert-string-list>
+            </div>
+            <!-- #endregion recommended-actions -->
+
+            <!-- #region activity-history -->
+            <div *ngIf="alertDetails.historyStates && alertDetails.historyStates.length" class="list-item">
+                <app-activity-history [items]="alertDetails.historyStates"></app-activity-history>
+            </div>
+            <!-- #endregion activity-history -->
+
+        </div>
+    </perfect-scrollbar>
+    <!--#endregion scrollable-detail-list -->
+</div>
+
+<!-- #region forms -->
+<div class="form-container" *ngIf="alertDetails">
+    <perfect-scrollbar fxFlex>
+
+        <!-- #region update-alert-form -->
+        <app-update-alert-form [alert]="alertDetails" (update)="updateAlert($event)"></app-update-alert-form>
+        <!--#endregion update-alert-form -->
+
+        <!-- #region invoke-action-form -->
+        <app-invoke-action-form (submit)="invokeAction($event)" [actionDetails]="actionDetails">
+        </app-invoke-action-form>
+        <!--#endregion invoke-action-form -->
+
+    </perfect-scrollbar>
+</div>
+<!--#endregion forms -->

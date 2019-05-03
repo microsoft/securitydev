@@ -1,0 +1,216 @@
+{
+  "securityActions": [
+    {
+      "id": "1",
+      "name": "Block",
+      "createdDateTime": "2019-02-20T05:36:00Z",
+      "lastActionDateTime": "2019-02-20T05:37:00Z",
+      "actionReason": "Received TI this is a suspected malicious command and control center",
+      "parameters": [
+        {
+          "name": "AlertId",
+          "value": "53C7E3B0-8470-424C-BD40-2C9C3F9EFB81"
+        },
+        {
+          "name": "targetName",
+          "value": "destinationAddress"
+        },
+        {
+          "name": "targetValue",
+          "value": "54.243.235.218"
+        }
+      ],
+      "status": "Completed",
+      "vendorInformation": {
+        "provider": "Windows Defender ATP",
+        "vendor": "Microsoft",
+        "providerVersion": "3.10.2"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Block",
+      "createdDateTime": "2019-02-20T05:37:00Z",
+      "lastActionDateTime": "2019-02-20T05:38:00Z",
+      "actionReason": "Received TI this is a suspected malicious command and control center",
+      "parameters": [
+        {
+          "name": "AlertId",
+          "value": "53C7E3B0-8470-424C-BD40-2C9C3F9EFB81"
+        },
+        {
+          "name": "targetName",
+          "value": "destinationAddress"
+        },
+        {
+          "name": "targetValue",
+          "value": "54.243.235.218"
+        }
+      ],
+      "status": "Completed",
+      "vendorInformation": {
+        "provider": "Windows Defender ATP",
+        "vendor": "Microsoft",
+        "providerVersion": "3.10.2"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Block",
+      "createdDateTime": "2019-02-20T05:38:00Z",
+      "lastActionDateTime": "2019-02-20T05:39:00Z",
+      "actionReason": "Received TI this is a suspected malicious command and control center",
+      "parameters": [
+        {
+          "name": "AlertId",
+          "value": "53C7E3B0-8470-424C-BD40-2C9C3F9EFB81"
+        },
+        {
+          "name": "targetName",
+          "value": "destinationDomain"
+        },
+        {
+          "name": "targetValue",
+          "value": "willaims clarke.com"
+        }
+      ],
+      "status": "Completed",
+      "vendorInformation": {
+        "provider": "Windows Defender ATP",
+        "vendor": "Microsoft",
+        "providerVersion": "3.10.2"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Allow",
+      "createdDateTime": "2019-02-20T10:14:00Z",
+      "lastActionDateTime": "2019-02-20T10:15:00Z",
+      "actionReason": "Rollback block action.",
+      "parameters": [
+        {
+          "name": "AlertId",
+          "value": "53C7E3B0-8470-424C-BD40-2C9C3F9EFB81"
+        },
+        {
+          "name": "targetName",
+          "value": "destinationAddress"
+        },
+        {
+          "name": "targetValue",
+          "value": "52.243.345.123"
+        }
+      ],
+      "status": "Completed",
+      "vendorInformation": {
+        "provider": "Windows Defender ATP",
+        "providerVersion": "3.10.2",
+        "subProvider": "",
+        "vendor": "Microsoft"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Allow",
+      "createdDateTime": "2019-02-20T10:15:00Z",
+      "lastActionDateTime": "2019-02-20T10:16:00Z",
+      "actionReason": "Rollback block action.",
+      "parameters": [
+        {
+          "name": "AlertId",
+          "value": "53C7E3B0-8470-424C-BD40-2C9C3F9EFB81"
+        },
+        {
+          "name": "targetName",
+          "value": "destinationDomain"
+        },
+        {
+          "name": "targetValue",
+          "value": "willaimsclarke.com"
+        }
+      ],
+      "status": "Completed",
+      "vendorInformation": {
+        "provider": "Windows Defender ATP",
+        "providerVersion": "3.10.2",
+        "subProvider": "",
+        "vendor": "Microsoft"
+      }
+    }
+  ],
+  "devices": [
+    {
+      "id": "35888b53-23fd-4830-b526-d0df7ce8644e",
+      "displayName": "Microsoft Lumia 950 XL",
+      "operatingSystem": "Windows 10 Mobile",
+      "operatingSystemVersion": "10.2.5.75",
+      "isManaged": true,
+      "accountEnabled": true,
+      "approximateLastSignInDateTime": "2018-12-20T04:30:00Z",
+      "deviceId": "35888b53-23fd-4830-b526-d0df7ce8644e",
+      "deviceMetadata": "/metadata#device",
+      "isCompliant": true,
+      "deviceVersion": 3,
+      "trustType": "Workspace"
+    }
+  ],
+  "actionFilters": {
+    "actionNames": [
+      "Block",
+      "Allow"
+    ],
+    "actionTargets": [
+      "destinationAddress",
+      "destinationDomain",
+      "destinationUrl",
+      "destinationPort"
+    ]
+  },
+  "providers": [
+    "Windows Defender ATP",
+    "Azure AD Identity Protection",
+    "Azure Sentinel",
+    "Azure Advanced Threat Protection",
+    "Palo Alto Networks",
+    "Office 365",
+    "Cloud Application Security",
+    "Azure Information Protection",
+    "Contrast Security",
+    "Intune",
+    "Azure Security Center"
+  ],
+  "categories": [
+    "data",
+    "network",
+    "wildfire",
+    "threat",
+    "vulnerability",
+    "repeatedShareActivity",
+    "repeatedActivityShare",
+    "loginVelocity",
+    "riskyAnonymousIp",
+    "impossibleLoginVelocity",
+    "abnormalDataAccess",
+    "unfamiliarLocation",
+    "UnfamiliarLocation",
+    "Social Engineering",
+    "Command and  Control",
+    "suspiciousActivity",
+    "exploit",
+    "MANUAL",
+    "Device Not In Compliance",
+    "nonCompliantDevice",
+    "ThreatManagement",
+    "suspiciousPowerShell",
+    "DoubleExtension",
+    "ShadowCopyDelete",
+    "Petya",
+    "KnownCredentialAccessTools",
+    "SuspiciousSystemProcess",
+    "AnonymousAccessAnomaly",
+    "Modified system binary discovered",
+    "RegistryPersistence",
+    "SuspiciousActivity",
+    "Malicious_IP"
+  ]
+}

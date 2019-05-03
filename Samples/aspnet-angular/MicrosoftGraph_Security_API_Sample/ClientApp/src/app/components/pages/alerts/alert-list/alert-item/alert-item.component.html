@@ -1,0 +1,22 @@
+<div style="flex: 3" class="column" [title]="item.title">
+    <span>{{ item.title }}</span>
+</div>
+<div style="flex: 1; max-width: 120px;" class="column severity-wrapper" [title]="item.severity">
+    <app-severity-level [level]="item.severity.toLowerCase()"></app-severity-level>
+    <span>{{ item.severity }}</span>
+</div>
+<div style="flex: 1; max-width: 100px;" class="column" [title]="item.status">
+    <span>{{ item.status }}</span>
+</div>
+<div style="flex: 1" class="column" [title]="item.category">
+    <span>{{ item.category }}</span>
+</div>
+<div style="flex: 2; max-width: 150px;" class="column" [title]="item.createdDateTime | date : 'M/d/yyyy, h:mm a'">
+    <span>{{ item.createdDateTime | date : 'M/d/yyyy, h:mm a' }}</span>
+</div>
+<div style="flex: 2" class="column" [title]="item.assignedTo">
+    <span>{{ item.assignedTo | displayName }}</span>
+</div>
+<div style="flex: 2" class="column" [title]="item.provider">
+    <span>{{ item.provider }}</span>
+</div>

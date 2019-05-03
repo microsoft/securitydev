@@ -1,0 +1,763 @@
+<div class="title filters">
+    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M0 0.125H18V2.0498L11.25 8.7998V15.875H6.75V8.7998L0 2.0498V0.125ZM16.875 1.5752V1.25H1.125V1.5752L7.875 8.3252V14.75H10.125V8.3252L16.875 1.5752Z"
+            fill="#0078D7" />
+    </svg>
+    filters
+</div>
+<form [formGroup]="filtersForm" (ngSubmit)="applyFilters()">
+    <div class="form-row">
+        <app-textfield title="Top" type="number" formControlName="top" placeholder="">
+        </app-textfield>
+    </div>
+    <perfect-scrollbar fxFlex>
+        <!-- #region alert-filters  -->
+        <!-- #region alert:severity -->
+        <div class="form-row">
+            <app-expandable-list title="Severity" isExpanded="true">
+                <app-checkbox-group formControlName="alert:severity" [items]="filterData['alert:severity']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion alert:severity -->
+        <!-- #region alert:status -->
+        <div class="form-row">
+            <app-expandable-list title="Status" isExpanded="true">
+                <app-checkbox-group formControlName="alert:status" [items]="filterData['alert:status']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion alert:status -->
+        <!-- #region alert:feedback -->
+        <div class="form-row">
+            <app-expandable-list title="Feedback" isExpanded="true">
+                <app-checkbox-group formControlName="alert:feedback" [items]="filterData['alert:feedback']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion alert:feedback -->
+        <!-- #region alert:category -->
+        <div class="form-row">
+            <app-expandable-list title="Category" isExpanded="true">
+                <app-checkbox-group formControlName="alert:category" [items]="filterData['alert:category']">
+                </app-checkbox-group>
+            </app-expandable-list>
+        </div>
+        <!--#endregion alert:category -->
+        <!-- #region alert:title -->
+        <div class="form-row">
+            <app-expandable-list title="Title" isExpanded="true">
+                <app-textfield type="text" formControlName="alert:title" vertical="true"
+                    placeholder="Enter alert title">
+                </app-textfield>
+            </app-expandable-list>
+        </div>
+        <!--#endregion alert:title -->
+        <!-- #region alert:created-date-time -->
+        <div class="form-row">
+            <app-expandable-list title="Time Ranges" isExpanded="true">
+                <div class="form-field">
+                    <app-datetime-picker formControlName="alert:startdatetime" title="Start Date Time"
+                        placeholder="Select date and time" [max]="max"></app-datetime-picker>
+                </div>
+                <div class="form-field">
+                    <app-datetime-picker formControlName="alert:enddatetime" title="End Date Time"
+                        placeholder="Select date and time" [min]="min"></app-datetime-picker>
+                </div>
+            </app-expandable-list>
+        </div>
+        <!--#endregion created-date-time -->
+        <!--#endregion alert-filters -->
+
+        <!-- #region vendor-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Vendor" isExpanded="true">
+                <!-- #region vendor:vendor -->
+                <div class="form-row">
+                    <app-textfield type="text" title="Vendor Name" formControlName="vendor:vendor" vertical="true"
+                        placeholder="Enter Vendor Name">
+                    </app-textfield>
+                </div>
+                <!--#endregion vendor:vendor -->
+                <!-- #region vendor:provider -->
+                <div class="form-row">
+                    <app-checkbox-group title="Provider" formControlName="vendor:provider"
+                        [items]="filterData['vendor:provider']">
+                    </app-checkbox-group>
+                </div>
+                <!--#endregion vendor:provider -->
+                <!-- #region vendor:subprovider -->
+                <div class="form-row">
+                    <app-textfield type="text" title="Sub Provider" formControlName="vendor:subprovider" vertical="true"
+                        placeholder="Enter SubProvider Name">
+                    </app-textfield>
+                </div>
+                <!--#endregion vendor:subprovider -->
+                <!-- #region vendor:version -->
+                <div class="form-row">
+                    <app-textfield type="text" title="Version" formControlName="vendor:version" vertical="true"
+                        placeholder="Enter Vendor Version">
+                    </app-textfield>
+                </div>
+                <!--#endregion vendor:version -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion vendor-filters -->
+
+        <!-- #region user-state-filters -->
+        <div class="form-row">
+            <app-expandable-list title="User States" isExpanded="true">
+                <!-- #region user:aaduserid -->
+                <div class="form-row">
+                    <app-textfield type="text" title="Azure AD User Id" formControlName="user:aaduserid" vertical="true"
+                        placeholder="Enter Azure AD  User Identifier">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:aaduserid -->
+                <!-- #region user:accountname -->
+                <div class="form-row">
+                    <app-textfield type="text" title="Account name" formControlName="user:accountname" vertical="true"
+                        placeholder="Enter Account Name">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:accountname -->
+                <!-- #region user:domainname -->
+                <div class="form-row">
+                    <app-textfield type="text" title="Domain name" formControlName="user:domainname" vertical="true"
+                        placeholder="Enter Domain Name">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:domainname -->
+                <!-- #region user:emailrole -->
+                <div class="form-row">
+                    <app-textfield type="text" title="Email role" formControlName="user:emailrole" vertical="true"
+                        placeholder="Enter email role">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:emailrole -->
+                <!-- #region user:isvpn -->
+                <div class="form-row">
+                    <app-checkbox title="isVpn" formControlName="user:isvpn"></app-checkbox>
+                </div>
+                <!--#endregion user:isvpn -->
+                <!-- #region user:logondatetime -->
+                <div class="form-row">
+                    <div class="form-field">
+                        <app-datetime-picker formControlName="user:logondatetime" title="Logon date time"
+                            placeholder="Select user logon date and time"></app-datetime-picker>
+                    </div>
+                </div>
+                <!--#endregion user:logondatetime -->
+                <!-- #region user:logonid -->
+                <div class="form-row">
+                    <app-textfield type="text" title="logon id" formControlName="user:logonid" vertical="true"
+                        placeholder="Enter logon identifier">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:logonid -->
+                <!-- #region user:logonip -->
+                <div class="form-row">
+                    <app-textfield type="text" title="logon IP" formControlName="user:logonip" vertical="true"
+                        placeholder="Enter logon IP">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:logonip -->
+                <!-- #region user:logonlocation -->
+                <div class="form-row">
+                    <app-textfield type="text" title="logon location" formControlName="user:logonlocation"
+                        vertical="true" placeholder="Enter logon location">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:logonlocation -->
+                <!-- #region user:logontype -->
+                <div class="form-row">
+                    <app-textfield type="text" title="logon logontype" formControlName="user:logontype" vertical="true"
+                        placeholder="Enter logon logontype">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:logontype -->
+                <!-- #region user:onpremisessecurityidentifier -->
+                <div class="form-row">
+                    <app-textfield type="text" title="on premises security identifier"
+                        formControlName="user:onpremisessecurityidentifier" vertical="true"
+                        placeholder="Enter on premises security identifier">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:onpremisessecurityidentifier -->
+                <!-- #region user:riskscore -->
+                <div class="form-row">
+                    <app-textfield type="text" title="risk score" formControlName="user:riskscore" vertical="true"
+                        placeholder="Enter risk score">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:riskscore -->
+                <!-- #region user:accounttype -->
+                <div class="form-row">
+                    <app-textfield type="text" title="account type" formControlName="user:accounttype" vertical="true"
+                        placeholder="Enter account type">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:accounttype -->
+                <!-- #region user:upn -->
+                <div class="form-row">
+                    <app-textfield type="text" title="User Principal Name" formControlName="user:upn" vertical="true"
+                        placeholder="Enter User Principal Name (UPN)">
+                    </app-textfield>
+                </div>
+                <!--#endregion user:upn -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion user-state-filters -->
+
+        <!-- #region host-state-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Host States" isExpanded="true">
+                <!-- #region host:fqdn -->
+                <div class="form-row">
+                    <app-textfield type="text" title="Host Name" formControlName="host:fqdn" vertical="true"
+                        placeholder="Enter Fully Qualified Domain Name">
+                    </app-textfield>
+                </div>
+                <!--#endregion host:fqdn -->
+                <!-- #region host:isazureadjoined -->
+                <div class="form-row">
+                    <app-checkbox title="Is Azure AD Joined" formControlName="host:isazureadjoined"></app-checkbox>
+                </div>
+                <!--#endregion host:isazureadjoined -->
+                <!-- #region host:isazureadregistered -->
+                <div class="form-row">
+                    <app-checkbox title="Is Azure AD Registered" formControlName="host:isazureadregistered">
+                    </app-checkbox>
+                </div>
+                <!--#endregion host:isazureadregistered -->
+                <!-- #region host:ishybridazuredomainjoined -->
+                <div class="form-row">
+                    <app-checkbox title="is hybrid azure domain joined"
+                        formControlName="host:ishybridazuredomainjoined">
+                    </app-checkbox>
+                </div>
+                <!--#endregion host:ishybridazuredomainjoined -->
+                <!-- #region host:netbiosname -->
+                <div class="form-row">
+                    <app-textfield type="text" title="NetBIOS name" formControlName="host:netbiosname" vertical="true"
+                        placeholder="Enter NetBIOS name">
+                    </app-textfield>
+                </div>
+                <!--#endregion host:netbiosname -->
+                <!-- #region host:os -->
+                <div class="form-row">
+                    <app-textfield type="text" title="OS" formControlName="host:os" vertical="true"
+                        placeholder="Enter OS">
+                    </app-textfield>
+                </div>
+                <!--#endregion host:os -->
+                <!-- #region host:privateipaddress -->
+                <div class="form-row">
+                    <app-textfield type="text" title="private IP address" formControlName="host:privateipaddress"
+                        vertical="true" placeholder="Enter private IP address">
+                    </app-textfield>
+                </div>
+                <!--#endregion host:privateipaddress -->
+                <!-- #region host:publicipaddress -->
+                <div class="form-row">
+                    <app-textfield type="text" title="public IP address" formControlName="host:publicipaddress"
+                        vertical="true" placeholder="Enter public IP address">
+                    </app-textfield>
+                </div>
+                <!--#endregion host:publicipaddress -->
+                <!-- #region host:riskscore -->
+                <div class="form-row">
+                    <app-textfield type="text" title="risk score" formControlName="host:riskscore" vertical="true"
+                        placeholder="Enter risk score">
+                    </app-textfield>
+                </div>
+                <!--#endregion host:riskscore -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion host-state-filters -->
+
+        <!-- #region triggers-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Triggers" isExpanded="true">
+                <!-- #region trigger:name -->
+                <div class="form-row">
+                    <app-textfield type="text" title="trigger name" formControlName="trigger:name" vertical="true"
+                        placeholder="Enter trigger name">
+                    </app-textfield>
+                </div>
+                <!--#endregion trigger:name -->
+                <!-- #region trigger:value -->
+                <div class="form-row">
+                    <app-textfield type="text" title="trigger value" formControlName="trigger:value" vertical="true"
+                        placeholder="Enter trigger value">
+                    </app-textfield>
+                </div>
+                <!--#endregion trigger:value -->
+                <!-- #region trigger:type -->
+                <div class="form-row">
+                    <app-textfield type="text" title="trigger type" formControlName="trigger:type" vertical="true"
+                        placeholder="Enter trigger type">
+                    </app-textfield>
+                </div>
+                <!--#endregion trigger:type -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion triggers-filters -->
+
+        <!-- #region network-connection-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Network connections" isExpanded="true">
+                <!-- #region netconn:applicationname -->
+                <div class="form-row">
+                    <app-textfield type="text" title="application name" formControlName="netconn:applicationname"
+                        vertical="true" placeholder="Enter application name">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:applicationname -->
+                <!-- #region netconn:destinationaddress -->
+                <div class="form-row">
+                    <app-textfield type="text" title="destination address" formControlName="netconn:destinationaddress"
+                        vertical="true" placeholder="Enter destination address">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:destinationaddress -->
+                <!-- #region netconn:destinationdomain -->
+                <div class="form-row">
+                    <app-textfield type="text" title="destination domain" formControlName="netconn:destinationdomain"
+                        vertical="true" placeholder="Enter destination domain">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:destinationdomain -->
+                <!-- #region netconn:destinationport -->
+                <div class="form-row">
+                    <app-textfield type="text" title="destination port" formControlName="netconn:destinationport"
+                        vertical="true" placeholder="Enter destination port">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:destinationport -->
+                <!-- #region netconn:destinationurl -->
+                <div class="form-row">
+                    <app-textfield type="text" title="destination URL" formControlName="netconn:destinationurl"
+                        vertical="true" placeholder="Enter destination URL">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:destinationurl -->
+                <!-- #region netconn:direction -->
+                <div class="form-row">
+                    <app-textfield type="text" title="direction" formControlName="netconn:direction" vertical="true"
+                        placeholder="Enter direction">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:direction -->
+                <!-- #region netconn:domainregistereddatetime -->
+                <div class="form-row">
+                    <div class="form-field">
+                        <app-datetime-picker formControlName="netconn:domainregistereddatetime"
+                            title="domain registered datetime" placeholder="Select domain registered date and time">
+                        </app-datetime-picker>
+                    </div>
+                </div>
+                <!--#endregion netconn:domainregistereddatetime -->
+                <!-- #region netconn:localdnsname -->
+                <div class="form-row">
+                    <app-textfield type="text" title="local DNS name" formControlName="netconn:localdnsname"
+                        vertical="true" placeholder="Enter local DNS name">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:localdnsname -->
+                <!-- #region netconn:natdestinationaddress -->
+                <div class="form-row">
+                    <app-textfield type="text" title="NAT destination address"
+                        formControlName="netconn:natdestinationaddress" vertical="true"
+                        placeholder="Enter NAT destination address">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:natdestinationaddress -->
+                <!-- #region netconn:natdestinationport -->
+                <div class="form-row">
+                    <app-textfield type="text" title="NAT destination port" formControlName="netconn:natdestinationport"
+                        vertical="true" placeholder="Enter NAT destination port">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:natdestinationport -->
+                <!-- #region netconn:natsourceaddress -->
+                <div class="form-row">
+                    <app-textfield type="text" title="NAT source address" formControlName="netconn:natsourceaddress"
+                        vertical="true" placeholder="Enter NAT source address">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:natsourceaddress -->
+                <!-- #region netconn:natsourceport -->
+                <div class="form-row">
+                    <app-textfield type="text" title="NAT source port" formControlName="netconn:natsourceport"
+                        vertical="true" placeholder="Enter NAT source port">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:natsourceport -->
+                <!-- #region netconn:protocol -->
+                <div class="form-row">
+                    <app-textfield type="text" title="protocol" formControlName="netconn:protocol" vertical="true"
+                        placeholder="Enter protocol">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:protocol -->
+                <!-- #region netconn:riskscore -->
+                <div class="form-row">
+                    <app-textfield type="text" title="risk score" formControlName="netconn:riskscore" vertical="true"
+                        placeholder="Enter risk score">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:riskscore -->
+                <!-- #region netconn:sourceaddress -->
+                <div class="form-row">
+                    <app-textfield type="text" title="source address" formControlName="netconn:sourceaddress"
+                        vertical="true" placeholder="Enter source address">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:sourceaddress -->
+                <!-- #region netconn:sourceport -->
+                <div class="form-row">
+                    <app-textfield type="text" title="source port" formControlName="netconn:sourceport" vertical="true"
+                        placeholder="Enter source port">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:sourceport -->
+                <!-- #region netconn:status -->
+                <div class="form-row">
+                    <app-textfield type="text" title="status" formControlName="netconn:status" vertical="true"
+                        placeholder="Enter status">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:status -->
+                <!-- #region netconn:urlparameters -->
+                <div class="form-row">
+                    <app-textfield type="text" title="url parameters" formControlName="netconn:urlparameters"
+                        vertical="true" placeholder="Enter url parameters">
+                    </app-textfield>
+                </div>
+                <!--#endregion netconn:urlparameters -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion network-connection-filters -->
+
+        <!-- #region file-state-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Files" isExpanded="true">
+                <!-- #region file:name -->
+                <div class="form-row">
+                    <app-textfield type="text" title="file name" formControlName="file:name" vertical="true"
+                        placeholder="Enter file name">
+                    </app-textfield>
+                </div>
+                <!--#endregion file:name -->
+                <!-- #region file:path -->
+                <div class="form-row">
+                    <app-textfield type="text" title="file path" formControlName="file:path" vertical="true"
+                        placeholder="Enter file path">
+                    </app-textfield>
+                </div>
+                <!--#endregion file:path -->
+                <!-- #region file:riskscore -->
+                <div class="form-row">
+                    <app-textfield type="text" title="file risk score" formControlName="file:riskscore" vertical="true"
+                        placeholder="Enter file risk score">
+                    </app-textfield>
+                </div>
+                <!--#endregion file:riskscore -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion file-state-filters -->
+
+        <!-- #region process-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Processes" isExpanded="true">
+                <!-- #region process:accountname -->
+                <div class="form-row">
+                    <app-textfield type="text" title="account name" formControlName="process:accountname"
+                        vertical="true" placeholder="Enter account name">
+                    </app-textfield>
+                </div>
+                <!--#endregion process:accountname -->
+                <!-- #region process:commandline -->
+                <div class="form-row">
+                    <app-textfield type="text" title="commandline" formControlName="process:commandline" vertical="true"
+                        placeholder="Enter commandline">
+                    </app-textfield>
+                </div>
+                <!--#endregion process:commandline -->
+                <!-- #region process:createddatetime -->
+                <div class="form-row">
+                    <div class="form-field">
+                        <app-datetime-picker formControlName="process:createddatetime" title="Created date time"
+                            placeholder="Select created date and time"></app-datetime-picker>
+                    </div>
+                </div>
+                <!--#endregion process:createddatetime -->
+                <!-- #region process:integritylevel -->
+                <div class="form-row">
+                    <app-textfield type="text" title="integrity level" formControlName="process:integritylevel"
+                        vertical="true" placeholder="Enter integrity level">
+                    </app-textfield>
+                </div>
+                <!--#endregion process:integritylevel -->
+                <!-- #region process:iselevated -->
+                <div class="form-row">
+                    <app-checkbox title="is elevated" formControlName="process:iselevated">
+                    </app-checkbox>
+                </div>
+                <!--#endregion process:iselevated -->
+                <!-- #region process:name -->
+                <div class="form-row">
+                    <app-textfield type="text" title="name" formControlName="process:name" vertical="true"
+                        placeholder="Enter name">
+                    </app-textfield>
+                </div>
+                <!--#endregion process:name -->
+                <!-- #region process:parentprocesscreateddatetime -->
+                <div class="form-row">
+                    <div class="form-field">
+                        <app-datetime-picker formControlName="process:parentprocesscreateddatetime"
+                            title="parent process created date time"
+                            placeholder="Select parent process created date and time"></app-datetime-picker>
+                    </div>
+                </div>
+                <!--#endregion process:parentprocesscreateddatetime -->
+                <!-- #region process:parentprocessid -->
+                <div class="form-row">
+                    <app-textfield type="number" title="parent process id" formControlName="process:parentprocessid"
+                        vertical="true" placeholder="Enter parent process id">
+                    </app-textfield>
+                </div>
+                <!--#endregion process:parentprocessid -->
+                <!-- #region process:parentprocessname -->
+                <div class="form-row">
+                    <app-textfield type="text" title="parent process name" formControlName="process:parentprocessname"
+                        vertical="true" placeholder="Enter parent process name">
+                    </app-textfield>
+                </div>
+                <!--#endregion process:parentprocessname -->
+                <!-- #region process:path -->
+                <div class="form-row">
+                    <app-textfield type="text" title="path" formControlName="process:path" vertical="true"
+                        placeholder="Enter path">
+                    </app-textfield>
+                </div>
+                <!--#endregion process:path -->
+                <!-- #region process:processid -->
+                <div class="form-row">
+                    <app-textfield type="number" title="process id" formControlName="process:processid" vertical="true"
+                        placeholder="Enter process id">
+                    </app-textfield>
+                </div>
+                <!--#endregion process:processid -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion process-filters -->
+
+        <!-- #region key-update-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Key Updates" isExpanded="true">
+                <!-- #region regkeyupdate:hive -->
+                <div class="form-row">
+                    <app-textfield type="text" title="hive" formControlName="regkeyupdate:hive" vertical="true"
+                        placeholder="Enter hive">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:hive -->
+                <!-- #region regkeyupdate:valuetype -->
+                <div class="form-row">
+                    <app-textfield type="text" title="value type" formControlName="regkeyupdate:valuetype"
+                        vertical="true" placeholder="Enter value type">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:valuetype -->
+                <!-- #region regkeyupdate:operation -->
+                <div class="form-row">
+                    <app-textfield type="text" title="operation" formControlName="regkeyupdate:operation"
+                        vertical="true" placeholder="Enter operation">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:operation -->
+                <!-- #region regkeyupdate:oldkey -->
+                <div class="form-row">
+                    <app-textfield type="text" title="old key" formControlName="regkeyupdate:oldkey" vertical="true"
+                        placeholder="Enter old key">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:oldkey -->
+                <!-- #region regkeyupdate:oldvaluename -->
+                <div class="form-row">
+                    <app-textfield type="text" title="old value name" formControlName="regkeyupdate:oldvaluename"
+                        vertical="true" placeholder="Enter old value name">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:oldvaluename -->
+                <!-- #region regkeyupdate:oldvaluedata -->
+                <div class="form-row">
+                    <app-textfield type="text" title="old value data" formControlName="regkeyupdate:oldvaluedata"
+                        vertical="true" placeholder="Enter old value data">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:oldvaluedata -->
+                <!-- #region regkeyupdate:key -->
+                <div class="form-row">
+                    <app-textfield type="text" title="key" formControlName="regkeyupdate:key" vertical="true"
+                        placeholder="Enter key">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:key -->
+                <!-- #region regkeyupdate:valuename -->
+                <div class="form-row">
+                    <app-textfield type="text" title="value name" formControlName="regkeyupdate:valuename"
+                        vertical="true" placeholder="Enter value name">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:valuename -->
+                <!-- #region regkeyupdate:valuedata -->
+                <div class="form-row">
+                    <app-textfield type="text" title="value data" formControlName="regkeyupdate:valuedata"
+                        vertical="true" placeholder="Enter value data">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:valuedata -->
+                <!-- #region regkeyupdate:processid -->
+                <div class="form-row">
+                    <app-textfield type="number" title="process id" formControlName="regkeyupdate:processid"
+                        vertical="true" placeholder="Enter process id">
+                    </app-textfield>
+                </div>
+                <!--#endregion regkeyupdate:processid -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion key-update-filters -->
+
+        <!-- #region malwares-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Malwares" isExpanded="true">
+                <!-- #region malware:name -->
+                <div class="form-row">
+                    <app-textfield type="text" title="name" formControlName="malware:name" vertical="true"
+                        placeholder="Enter name">
+                    </app-textfield>
+                </div>
+                <!--#endregion malware:name -->
+                <!-- #region malware:category -->
+                <div class="form-row">
+                    <app-textfield type="text" title="category" formControlName="malware:category" vertical="true"
+                        placeholder="Enter category">
+                    </app-textfield>
+                </div>
+                <!--#endregion malware:category -->
+                <!-- #region malware:family -->
+                <div class="form-row">
+                    <app-textfield type="text" title="family" formControlName="malware:family" vertical="true"
+                        placeholder="Enter family">
+                    </app-textfield>
+                </div>
+                <!--#endregion malware:family -->
+                <!-- #region malware:severity -->
+                <div class="form-row">
+                    <app-textfield type="text" title="severity" formControlName="malware:severity" vertical="true"
+                        placeholder="Enter severity">
+                    </app-textfield>
+                </div>
+                <!--#endregion malware:severity -->
+                <!-- #region malware:wasrunning -->
+                <div class="form-row">
+                    <app-checkbox title="was running" formControlName="malware:wasrunning"></app-checkbox>
+                </div>
+                <!--#endregion malware:wasrunning -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion malwares-filters -->
+
+        <!-- #region tag-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Tag" isExpanded="true">
+                <!-- #region tag:title -->
+                <div class="form-row">
+                    <app-textfield type="text" formControlName="tag:title" vertical="true" placeholder="Enter tag">
+                    </app-textfield>
+                </div>
+                <!--#endregion tag:title -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion tag-filters -->
+
+        <!-- #region vulnerability-state-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Vulnerabilities" isExpanded="true">
+                <!-- #region vulnerability:cve -->
+                <div class="form-row">
+                    <app-textfield type="text" title="CVE" formControlName="vulnerability:cve" vertical="true"
+                        placeholder="Enter CVE">
+                    </app-textfield>
+                </div>
+                <!--#endregion vulnerability:cve -->
+                <!-- #region vulnerability:severity -->
+                <div class="form-row">
+                    <app-textfield type="text" title="severity" formControlName="vulnerability:severity" vertical="true"
+                        placeholder="Enter severity">
+                    </app-textfield>
+                </div>
+                <!--#endregion vulnerability:severity -->
+                <!-- #region vulnerability:wasrunning -->
+                <div class="form-row">
+                    <app-checkbox title="was running" formControlName="vulnerability:wasrunning"></app-checkbox>
+                </div>
+                <!--#endregion vulnerability:wasrunning -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion vulnerability-state-filters -->
+
+        <!-- #region cloud-app-state-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Cloud Applications" isExpanded="true">
+                <!-- #region cloudapp:destinationservicename -->
+                <div class="form-row">
+                    <app-textfield type="text" title="destination service name"
+                        formControlName="cloudapp:destinationservicename" vertical="true"
+                        placeholder="Enter destination service name">
+                    </app-textfield>
+                </div>
+                <!--#endregion cloudapp:destinationservicename -->
+                <!-- #region cloudapp:destinationserviceip -->
+                <div class="form-row">
+                    <app-textfield type="text" title="destination service IP"
+                        formControlName="cloudapp:destinationserviceip" vertical="true"
+                        placeholder="Enter destination service IP">
+                    </app-textfield>
+                </div>
+                <!--#endregion cloudapp:destinationserviceip -->
+                <!-- #region cloudapp:riskscore -->
+                <div class="form-row">
+                    <app-textfield type="text" title="risk score" formControlName="cloudapp:riskscore" vertical="true"
+                        placeholder="Enter risk score">
+                    </app-textfield>
+                </div>
+                <!--#endregion cloudapp:riskscore -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion cloud-app-state-filters -->
+
+        <!-- #region detection-filters -->
+        <div class="form-row">
+            <app-expandable-list title="Detections" isExpanded="true">
+                <!-- #region detection:id -->
+                <div class="form-row">
+                    <app-textfield type="text" formControlName="detection:id" vertical="true"
+                        placeholder="Enter detection identifier">
+                    </app-textfield>
+                </div>
+                <!--#endregion detection:id -->
+            </app-expandable-list>
+        </div>
+        <!--#endregion detection-filters -->
+    </perfect-scrollbar>
+    <div class="form-actions">
+        <app-button class="submit" title="Apply Filters" (btnClick)="applyFilters()" [disabled]="!filtersForm.valid">
+        </app-button>
+        <app-button class="cancel" title="Clear Filters" (btnClick)="clearFilters()"></app-button>
+    </div>
+</form>

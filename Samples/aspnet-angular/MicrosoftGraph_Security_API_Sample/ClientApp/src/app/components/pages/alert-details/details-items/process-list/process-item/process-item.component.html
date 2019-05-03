@@ -1,0 +1,43 @@
+<div class="column">
+    <app-clickable-property title="Name" [value]="item.name" filterKey="process:name"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Process id" [value]="item.processId" filterKey="process:processid"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Account name" [value]="item.accountName" filterKey="process:accountname"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Command line" [value]="item.commandLine" filterKey="process:commandline"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-datetime-clickable-property title="Created date time" [value]="item.createdDateTime"
+        filterKey="process:createddatetime" (valueClick)="onValueClick($event)">
+    </app-datetime-clickable-property>
+</div>
+<div class="column">
+    <app-clickable-property title="Integrity level" [value]="item.integrityLevel" filterKey="process:integritylevel"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-boolean-clickable-property title="Is elevated" [value]="item.isElevated" filterKey="process:iselevated"
+        (valueClick)="onValueClick($event)">
+    </app-boolean-clickable-property>
+    <app-clickable-property title="Path" [value]="item.path" filterKey="process:path"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-datetime-clickable-property title="Parent process created" [value]="item.parentProcessCreatedDateTime"
+        filterKey="process:parentprocesscreateddatetime" (valueClick)="onValueClick($event)">
+    </app-datetime-clickable-property>
+</div>
+<div class="column">
+    <app-clickable-property title="Parent process ID" [value]="item.parentProcessId" filterKey="process:parentprocessid"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Parent process name" [value]="item.parentProcessName"
+        filterKey="process:parentprocessname" (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="File hash type" [value]="item.fileHash?.hashType" [clickable]="false">
+    </app-clickable-property>
+    <app-clickable-property title="File hash value" [value]="item.fileHash?.hashValue" [clickable]="false">
+    </app-clickable-property>
+</div>

@@ -1,0 +1,10 @@
+<div class="background" (click)="onClose()"></div>
+<div class="form-container">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="onClose()">
+        <path
+            d="M9.57617 0.951172L5.5332 5L9.57617 9.04883L9.04883 9.57617L5 5.5332L0.951172 9.57617L0.423828 9.04883L4.4668 5L0.423828 0.951172L0.951172 0.423828L5 4.4668L9.04883 0.423828L9.57617 0.951172Z"
+            fill="black" />
+    </svg>
+    <app-invoke-action-form (submit)="invokeAction($event)">
+    </app-invoke-action-form>
+</div>

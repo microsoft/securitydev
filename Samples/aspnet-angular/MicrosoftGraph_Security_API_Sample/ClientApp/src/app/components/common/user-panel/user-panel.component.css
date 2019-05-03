@@ -1,0 +1,109 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 0;
+    background: white;
+    flex-grow: 0;
+    flex-shrink: 0;
+    transition: all .1s ease-in-out;
+}
+
+:host(.show) {
+    width: 343px;
+    height: 100%;
+    margin-left: 5px;
+}
+
+:host>header {
+    position: relative;
+    width: calc(100% - 19px);
+    height: 27px;
+    font-family: SegoeUI;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 3px 18px 16px;
+}
+
+:host>header>div.close {
+    position: absolute;
+    top: 10px;
+    right: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+:host>header>div.close:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
+:host>.user-info-container {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .1);
+    width: calc(100% - 32px);
+    height: 92px;
+    padding: 15px 16px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.user-photo,
+.user-initials {
+    width: 88px;
+    height: 88px;
+    display: flex;
+    flex-shrink: 0;
+    border-radius: 999px;
+}
+
+.user-initials {
+    font-family: SegoeUI;
+    font-size: 44px;
+    color: white;
+    background: #2D9CDB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+    font-family: SegoeUI;
+    overflow: hidden;
+}
+
+.text>div>div {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+
+.text>div>div:first-child {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.text>div>div:last-child {
+    font-size: 14px;
+}
+
+.text>a.action {
+    font-size: 14px;
+    color: #0078D7;
+    font-weight: bold;
+}
+
+.text>a.action:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

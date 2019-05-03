@@ -1,0 +1,11 @@
+<div class="title">{{ title }}:</div>
+<div class="value">
+    <span #queryValue [innerHTML]="value | safeDecodeHtml" [title]="value | safeDecodeHtml"></span>
+</div>
+<div class="copy-button" title="Copy to clipboard" (click)="copyToClipboard(queryValue.innerText)">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M16 12.7969H12.7969V16H0V3.20312H3.20312V0H16V12.7969ZM11.2031 4.79688H1.60156V14.3984H11.2031V4.79688ZM14.3984 1.60156H4.79688V3.20312H12.7969V11.2031H14.3984V1.60156Z"
+            fill="#B0B0B0" />
+    </svg>
+</div>

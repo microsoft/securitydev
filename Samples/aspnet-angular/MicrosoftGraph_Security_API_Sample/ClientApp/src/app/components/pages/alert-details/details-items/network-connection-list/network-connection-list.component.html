@@ -1,0 +1,5 @@
+<app-expandable-list [title]="title" [isExpanded]="isExpanded">
+    <app-network-connection-item *ngFor="let connection of connections" [connection]="connection"
+        (valueClick)="onValueClick($event)" (addAction)="addToAction($event)">
+    </app-network-connection-item>
+</app-expandable-list>

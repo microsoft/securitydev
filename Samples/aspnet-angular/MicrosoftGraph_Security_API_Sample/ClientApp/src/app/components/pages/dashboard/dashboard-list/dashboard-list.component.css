@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    flex-shrink: 0;
+}
+
+app-dashboard-item {
+    height: 40px;
+}

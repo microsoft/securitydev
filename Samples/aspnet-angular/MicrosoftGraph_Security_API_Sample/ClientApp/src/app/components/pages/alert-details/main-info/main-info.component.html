@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <app-clickable-property title="Created" [clickable]="false"
+            [value]="alertDetails.createdDateTime | date : 'M/d/yyyy, h:mm a'">
+        </app-clickable-property>
+        <app-user-clickable-property title="User" [user]="user" filterKey="user:upn"
+            (valueClick)="onValueClick($event)">
+        </app-user-clickable-property>
+        <app-host-clickable-property title="Host" [host]="host" filterKey="host:fqdn"
+            (valueClick)="onValueClick($event)">
+        </app-host-clickable-property>
+    </div>
+    <div class="row">
+        <app-user-clickable-property title="Assigned to" [user]="alertDetails.assignedTo" filterKey="alert:assignedto"
+            (valueClick)="onValueClick($event)">
+        </app-user-clickable-property>
+        <app-clickable-property title="ID" [clickable]="false" [value]="alertDetails.id">
+        </app-clickable-property>
+        <app-clickable-property title="Feedback" [value]="alertDetails.feedback" filterKey="alert:feedback"
+            (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+    </div>
+    <div class="row">
+        <app-clickable-property title="Description" [clickable]="false" [cropInlineText]="false"
+            [value]="alertDetails.description">
+        </app-clickable-property>
+    </div>
+</div>
+<div class="container fixed-width">
+    <label>Alert Source</label>
+    <div class="row">
+        <app-clickable-property title="Vendor" [value]="alertDetails.vendor?.vendor" filterKey="vendor:vendor"
+            (valueClick)="onValueClick($event)"></app-clickable-property>
+    </div>
+    <div class="row">
+        <app-clickable-property title="Provider" [value]="alertDetails.vendor?.provider" filterKey="vendor:provider"
+            (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+    </div>
+    <div class="row">
+        <app-clickable-property title="Version" [value]="alertDetails.vendor?.providerVersion"
+            filterKey="vendor:version" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+    </div>
+    <div class="row">
+        <app-clickable-property title="SubProvider" [value]="alertDetails.vendor?.subProvider"
+            filterKey="vendor:subprovider" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+    </div>
+</div>

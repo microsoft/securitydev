@@ -1,0 +1,37 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.title {
+    font-family: SegoeUI;
+    font-size: 12px;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 5px;
+}
+
+.value {
+    display: flex;
+    align-items: center;
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.value.clickable {
+    color: #0078D7;
+    cursor: pointer;
+}
+
+.value>svg {
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.value>div {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

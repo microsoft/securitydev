@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="column">
+        <app-clickable-property title="Application name" [value]="connection.applicationName"
+            filterKey="netconn:applicationname" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="Direction" [value]="connection.direction" filterKey="netconn:direction"
+            (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-datetime-clickable-property title="Domain registered" [value]="connection.domainRegisteredDateTime"
+            filterKey="netconn:domainregistereddatetime" (valueClick)="onValueClick($event)">
+        </app-datetime-clickable-property>
+        <app-clickable-property title="Local DNS name" [value]="connection.localDnsName"
+            filterKey="netconn:localdnsname" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="Protocol" [value]="connection.protocol" filterKey="netconn:protocol"
+            (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+    </div>
+    <div class="column">
+        <app-clickable-property title="Source address" [value]="connection.sourceAddress"
+            filterKey="netconn:sourceaddress" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="Source port" [value]="connection.sourcePort" filterKey="netconn:sourceport"
+            (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="Status" [value]="connection.status" filterKey="netconn:status"
+            (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="Risk score" [value]="connection.riskScore" filterKey="netconn:riskscore"
+            (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="URL parameters" [value]="connection.urlParameters"
+            filterKey="netconn:urlparameters" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+    </div>
+    <div class="column">
+        <app-clickable-property title="NAT destination address" [value]="connection.natDestinationAddress"
+            filterKey="netconn:domainregistereddatetime" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="NAT destination port" [value]="connection.natDestinationPort"
+            filterKey="netconn:natdestinationport" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="NAT source address" [value]="connection.natSourceAddress"
+            filterKey="netconn:natsourceaddress" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+        <app-clickable-property title="NAT source port" [value]="connection.natSourcePort"
+            filterKey="netconn:natsourceport" (valueClick)="onValueClick($event)">
+        </app-clickable-property>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <div class="action-value">
+            <div *ngIf="connection.destinationUrl" class="action" title="Add to action"
+                (click)="addToAction('destinationUrl', connection.destinationUrl)">
+                <svg height="48" viewBox="0 0 48 48" width="48">
+                    <path d="M0 0h48v48H0z" fill="none" />
+                    <path d="M28 20H4v4h24v-4zm0-8H4v4h24v-4zm8 16v-8h-4v8h-8v4h8v8h4v-8h8v-4h-8zM4 32h16v-4H4v4z" />
+                </svg>
+            </div>
+            <app-clickable-property title="Destination URL" [value]="connection.destinationUrl"
+                filterKey="netconn:destinationurl" (valueClick)="onValueClick($event)">
+            </app-clickable-property>
+        </div>
+        <div class="action-value">
+            <div *ngIf="connection.destinationAddress" class="action" title="Add to action"
+                (click)="addToAction('destinationAddress', connection.destinationAddress)">
+                <svg height="48" viewBox="0 0 48 48" width="48">
+                    <path d="M0 0h48v48H0z" fill="none" />
+                    <path d="M28 20H4v4h24v-4zm0-8H4v4h24v-4zm8 16v-8h-4v8h-8v4h8v8h4v-8h8v-4h-8zM4 32h16v-4H4v4z" />
+                </svg>
+            </div>
+            <app-clickable-property title="Destination IP address" [value]="connection.destinationAddress"
+                filterKey="netconn:destinationaddress" (valueClick)="onValueClick($event)"></app-clickable-property>
+        </div>
+    </div>
+    <div class="column">
+        <div class="action-value">
+            <div *ngIf="connection.destinationDomain" class="action" title="Add to action"
+                (click)="addToAction('destinationDomain', connection.destinationDomain)">
+                <svg height="48" viewBox="0 0 48 48" width="48">
+                    <path d="M0 0h48v48H0z" fill="none" />
+                    <path d="M28 20H4v4h24v-4zm0-8H4v4h24v-4zm8 16v-8h-4v8h-8v4h8v8h4v-8h8v-4h-8zM4 32h16v-4H4v4z" />
+                </svg>
+            </div>
+            <app-clickable-property title="Destination domain" [value]="connection.destinationDomain"
+                filterKey="netconn:destinationdomain" (valueClick)="onValueClick($event)"></app-clickable-property>
+        </div>
+        <div class="action-value">
+            <div *ngIf="connection.destinationPort" class="action" title="Add to action"
+                (click)="addToAction('destinationPort', connection.destinationPort)">
+                <svg height="48" viewBox="0 0 48 48" width="48">
+                    <path d="M0 0h48v48H0z" fill="none" />
+                    <path d="M28 20H4v4h24v-4zm0-8H4v4h24v-4zm8 16v-8h-4v8h-8v4h8v8h4v-8h8v-4h-8zM4 32h16v-4H4v4z" />
+                </svg>
+            </div>
+            <app-clickable-property title="Destination port" [value]="connection.destinationPort"
+                filterKey="netconn:destinationport" (valueClick)="onValueClick($event)"></app-clickable-property>
+        </div>
+    </div>
+    <div class="column"></div>
+</div>

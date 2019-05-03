@@ -1,0 +1,13 @@
+<header class="list-header">
+  <div style="flex: 2;" class="column">Target</div>
+  <div style="flex: 1; max-width: 50px;" class="column">Type</div>
+  <div style="flex: 2; max-width: 145px;" class="column">Submitted</div>
+  <div style="flex: 3;" class="column">Reason / Alert ID</div>
+  <div style="flex: 2;" class="column">Provider</div>
+  <div style="flex: 1; max-width: 70px;" class="column">Status</div>
+  <div style="flex: 2; max-width: 145px;" class="column">Status Updated</div>
+</header>
+<perfect-scrollbar fxFlex>
+  <app-action-item *ngFor="let action of actions" [item]="action" (filterValueClick)="filterAlert($event)">
+  </app-action-item>
+</perfect-scrollbar>

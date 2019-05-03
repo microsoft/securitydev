@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    margin-top: 10px;
+}
+
+:host>label {
+    font-family: SegoeUI;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.severity-container {
+    margin: 5px 25px 0 25px;
+}
+
+.status {
+    font-family: SegoeUI;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}

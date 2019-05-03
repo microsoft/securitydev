@@ -1,0 +1,48 @@
+.flex-container {
+    display: flex;
+}
+
+.doughnut-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 400px;
+    margin: 10px 0 0 0;
+}
+
+.dash-bar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    max-width: 400px;
+    margin: 10px 0;
+}
+
+.secure-bar-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+span {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dashboard-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 150px;
+}
+
+.secure-score-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

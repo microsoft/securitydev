@@ -1,0 +1,13 @@
+<div (click)="toggleCheck()" class="checkbox-container">
+    <div class="check" [ngClass]="{ 'checked': checked }">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M15.0605 0.560547L15.9395 1.43945L5.5 11.8887L0.0605469 6.43945L0.939453 5.56055L5.5 10.1113L15.0605 0.560547Z"
+                fill="white" />
+        </svg>
+    </div>
+    <div *ngIf="isLevel" class="level-container">
+        <app-severity-level [level]="key"></app-severity-level>
+    </div>
+    <label>{{ title }}</label>
+</div>

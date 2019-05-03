@@ -1,0 +1,6 @@
+<div class="title">{{ title }}</div>
+<div class="value">
+    <app-user-logo *ngIf="user" [user]="user"></app-user-logo>
+    <div [title]="getDisplayValue() || ''" [ngClass]="{'clickable': clickable && user}" (click)="onClick()">
+        {{ getDisplayValue() || 'No data' }}</div>
+</div>

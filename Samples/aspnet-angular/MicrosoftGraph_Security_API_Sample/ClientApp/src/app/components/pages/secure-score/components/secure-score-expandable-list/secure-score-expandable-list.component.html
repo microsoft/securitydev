@@ -1,0 +1,80 @@
+<header class="main-container" (click)="toggle()" [ngClass]="{ 'expanded': isExpanded }">
+    <div class="header-cols">
+        <span class="action-col">{{ action.title }}</span>
+        <span class="category-col">{{ action.controlCategory }}</span>
+        <span class="score-col">{{ action.maxScore }}</span>
+    </div>
+    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 6.09766L11.3613 0.736328L11.8887 1.26367L6 7.15234L0.111328 1.26367L0.638672 0.736328L6 6.09766Z"
+            fill="black" fill-opacity="0.8" />
+    </svg>
+</header>
+<div class="expandable-content" [ngClass]="{ 'expanded': isExpanded }">
+    <div class="left-part">
+        <div class="row">
+            <span class="title">Last Modified</span>
+            <span class="info">{{ action.lastModifiedDateTime | date : 'M/d/yyyy, h:mm a' || 'No data' }}</span>
+        </div>
+        <div class="row">
+            <span class="title">Action URL</span>
+            <a class="info clickable" [href]="action.actionUrl" target="_blank">{{ action.actionUrl }}</a>
+        </div>
+        <div class="row">
+            <span class="title">Remediation</span>
+            <span class="info">{{ action.remediation }}</span>
+        </div>
+        <div class="row">
+            <span class="title">Deprecated</span>
+            <span class="info">{{ action.deprecated }}</span>
+        </div>
+        <div class="row">
+            <span class="title">Service</span>
+            <span class="info">{{ action.service }}</span>
+        </div>
+        <div class="row">
+            <span class="title">Tier</span>
+            <span class="info">{{ action.tier }}</span>
+        </div>
+        <div class="row">
+            <span class="title">Threats</span>
+            <div class="table-info">
+                <div class="table-info-header">
+                    <span class="table-info-col">Assigned To</span>
+                    <span class="table-info-col">State</span>
+                    <span class="table-info-col">Comment</span>
+                    <span class="table-info-col">Updated by</span>
+                    <span class="table-info-col">Updated</span>
+                </div>
+                <div class="table-info-content" *ngFor="let item of secureStateUpdates">
+                    <span class="table-info-col">{{ item.assignTo }}</span>
+                    <span class="table-info-col">{{ item.state }}</span>
+                    <span class="table-info-col">{{ item.comment }}</span>
+                    <span class="table-info-col">{{ item.updatedBy }}</span>
+                    <span class="table-info-col">
+                        {{ item.updatedDateTime | date : 'M/d/yyyy, h:mm a' || 'No data' }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-part">
+        <div class="grey-container">
+            <div class="row">
+                <span class="title">Category</span>
+                <span class="info">{{ action.controlCategory }}</span>
+            </div>
+            <div class="row">
+                <span class="title">Max Score</span>
+                <span class="info">{{ action.maxScore }}</span>
+            </div>
+            <div class="row">
+                <span class="title">User Impact</span>
+                <span class="info">{{ action.userImpact }}</span>
+            </div>
+            <div class="row">
+                <span class="title">Implementation Cost</span>
+                <span class="info">{{ action.implementationCost }}</span>
+            </div>
+        </div>
+    </div>
+</div>

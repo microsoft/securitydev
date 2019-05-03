@@ -1,0 +1,35 @@
+:host{
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bar span {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+.values {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  font-weight: bold;
+  right: 0%;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+svg {
+  z-index: 2;
+}
+
+.value {
+  position: absolute;
+}

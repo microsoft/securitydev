@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    position: relative;
+}
+
+:host>label {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: #2D2D2D;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    margin-bottom: 6px;
+}
+
+:host>input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    height: 26px;
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 10px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+:host>svg {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}

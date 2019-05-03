@@ -1,0 +1,18 @@
+:host {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.queries-list-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.action-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 137px;
+    flex-shrink: 0;
+}

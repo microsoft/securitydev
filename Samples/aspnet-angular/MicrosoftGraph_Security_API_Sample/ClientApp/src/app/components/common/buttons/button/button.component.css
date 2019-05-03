@@ -1,0 +1,29 @@
+:host {
+    display: flex;
+    width: 120px;
+    height: 32px;
+    background: #0078D7;
+    color: white;
+    font-family: SegoeUI;
+    font-size: 14px;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:host.disabled {
+    cursor: not-allowed;
+}
+
+:host:not(.disabled):hover {
+    cursor: pointer;
+    background: #0088E7;
+}
+
+:host:not(.disabled):active {
+    background: #0078D7;
+}
