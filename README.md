@@ -8,7 +8,9 @@ Feedback / Questions / Bugs to report? File [issues](https://github.com/Microsof
 * [Microsoft security samples for connected experiences](https://github.com/Microsoft/securitydev)
 
 # Getting Started
-* Read the [Getting started as a Microsoft security developer whitepaper](https://aka.ms/securitydevwhitepaper)
+Read the [Developers Guide to Building Connected Security Solutions](https://aka.ms/securitydevwhitepaper).  
+The Developers Guide to Building Connected Security Solutions offers a primer for those who want to build apps, workflows, and analytics that integrate with Microsoft security solutions. In addition to introducing to the Microsoft APIs, services, and communities available to developers, the guide offers detailed guidance on when and how to use each – what technology and integration option best aligns with your desired scenario and application type. 
+
 
 # Discover APIs and Services  
 <table BORDER="1" CELLPADDING="10" class="myTable">
@@ -121,7 +123,11 @@ Feedback / Questions / Bugs to report? File [issues](https://github.com/Microsof
 </table>
 
  
- 
+# Other security communities 
+* [Microsoft Graph Security API](https://github.com/microsoftgraph/security-api-solutions)
+* [Azure Sentinel](https://github.com/Azure/Azure-Sentinel)
+* [Windows Defender ATP](https://github.com/Microsoft/WindowsDefenderATP-Hunting-Queries) 
+* [Azure Security Center](https://github.com/Microsoft/Azure-Security-Center)
 
 # Contributing
 
