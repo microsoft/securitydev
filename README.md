@@ -1,6 +1,8 @@
 # Get Started as Microsoft Security Developer 
 
-Welcome to the Microsoft Security Dev repository! This repository is a landing page to learn about  Microsoft security APIs, services and communities. This will enable application developers to build security applications catering to different requirements. Furthermore, this repo is a starting point to share code, libraries, notebooks, workbooks, and queries for building connected experiences.
+Welcome to the Microsoft Security Dev repository! This repository is a landing page to learn about  Microsoft security APIs, services and communities. This will enable application developers to build security applications catering to different requirements. Furthermore, this repo is a starting point to share code, libraries, notebooks, workbooks, and queries for building connected experiences. 
+
+Read the [blogpost](https://aka.ms/securitydevblogpost) for more details.
 
 Feedback / Questions / Bugs to report? File [issues](https://github.com/Microsoft/securitydev/issues)
 
