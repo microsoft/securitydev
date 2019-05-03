@@ -5,7 +5,7 @@ Welcome to the Microsoft Security Dev repository! This repository is a landing p
 Feedback / Questions / Bugs to report? File [issues](https://github.com/Microsoft/securitydev/issues)
 
 # In this repository
-* [Microsoft security samples for connected experiences](https://github.com/Microsoft/securitydev)
+* [Microsoft security samples for connected experiences](https://github.com/Microsoft/securitydev/tree/master/Samples)
 
 # Getting Started
 Read the [Developers Guide to Building Connected Security Solutions](https://aka.ms/securitydevwhitepaper).  
