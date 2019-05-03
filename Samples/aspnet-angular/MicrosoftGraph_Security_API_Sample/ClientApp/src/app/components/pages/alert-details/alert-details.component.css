@@ -1,0 +1,56 @@
+:host {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.page-content {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    margin-right: 10px;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+    flex-grow: 1;
+}
+
+.alerts {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    font-family: SegoeUI;
+    font-size: 20px;
+    color: #2D2D2D;
+    margin-top: 7px;
+    text-transform: capitalize;
+}
+
+.scrollable-content-container {
+    background: white;
+    padding: 19px 22px;
+}
+
+.scrollable-content-container .list-item {
+    background: white;
+    border: 1px solid #E9E9E9;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    padding: 10px 12px;
+}
+
+.scrollable-content-container .list-item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.form-container {
+    width: 340px;
+    flex-shrink: 0;
+    background: white;
+}
+
+.form-container app-update-alert-form,
+.form-container app-invoke-action-form {
+    border-bottom: 1px solid #E9E9E9;
+}

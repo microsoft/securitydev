@@ -1,0 +1,32 @@
+<div class="column" style="flex:2;">
+    <app-clickable-property title="FQDN" [value]="host.fqdn" filterKey="host:fqdn" (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="NetBios name" [value]="host.netBiosName" filterKey="host:netbiosname"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Operating system" [value]="host.os" filterKey="host:os"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+</div>
+<div class="column">
+    <app-clickable-property title="Private IP adress" [value]="host.privateIpAddress" filterKey="host:privateipaddress"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Public IP adress" [value]="host.publicIpAddress" filterKey="host:publicipaddress"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+    <app-clickable-property title="Risk score" [value]="host.riskScore" filterKey="host:riskscore"
+        (valueClick)="onValueClick($event)">
+    </app-clickable-property>
+</div>
+<div class="column">
+    <app-boolean-clickable-property title="Is AzureAD joined" [value]="host.isAzureAdJoined"
+        filterKey="host:isazureadjoined" (valueClick)="onValueClick($event)">
+    </app-boolean-clickable-property>
+    <app-boolean-clickable-property title="Is AzureAD registered" [value]="host.isAzureAdRegistered"
+        filterKey="host:isazureadregistered" (valueClick)="onValueClick($event)">
+    </app-boolean-clickable-property>
+    <app-boolean-clickable-property title="Is hybrid Azure domain joined" [value]="host.isHybridAzureDomainJoined"
+        filterKey="host:ishybridazuredomainjoined" (valueClick)="onValueClick($event)">
+    </app-boolean-clickable-property>
+</div>

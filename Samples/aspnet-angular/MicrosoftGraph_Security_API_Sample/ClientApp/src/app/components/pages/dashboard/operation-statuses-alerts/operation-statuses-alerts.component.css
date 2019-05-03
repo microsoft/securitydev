@@ -1,0 +1,13 @@
+.alert-statuses-box{
+    display:flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+.alert-statuses-box > * {
+    display: flex;
+    margin-top: 20px;
+    flex:1;
+}
+.alert-statuses-box > *:first-child{
+    margin-top: 0px;
+}

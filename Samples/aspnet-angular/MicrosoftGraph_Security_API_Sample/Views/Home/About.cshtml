@@ -1,0 +1,83 @@
+﻿<!--  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+        See LICENSE in the source repository root for complete license information. -->
+
+@{
+    ViewBag.Title = "About";
+}
+<h2>Graph Security API</h2>
+
+<p>Find out more about the Graph Security API</p>
+<ul>
+    <li>Graph Security API - General Information - <a href="http://aka.ms/graphsecurityapi" target="_blank\">http://aka.ms/graphsecurityapi</a></li>
+    <li>Graph Security API Documentation - <a href="http://aka.ms/graphsecuritydocs" target="_blank\">http://aka.ms/graphsecuritydocs</a></li>
+    <li>Graph Security API Sample code -  <a href="http://aka.ms/graphsecurityapicode" target="_blank\">http://aka.ms/graphsecurityapicode</a></li>
+    <li>Graph Security API SIEM documentation - <a href="http://aka.ms/graphsecuritydocs" target="_blank\">http://aka.ms/graphsecuritydocs</a></li>
+</ul>
+
+<h2>Sample OData queries to get you started:</h2>
+
+<ol>
+    <li>
+        <b>Get</b> my top 5 security alerts from each provider: <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$top=5&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/v1.0/security/alerts?$top=5 </a>
+    </li>
+
+    <li>
+        <b>Get</b> my top 10 high severity security alerts from each provider:
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$filter=Severity eq 'High'&$top=10&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">
+            https://graph.microsoft.com/v1.0/security/alerts?$filter=Severity eq 'High'&$top=10
+        </a>
+    </li>
+
+    <li>
+        <b>Get</b> all security alerts related to Ransomware: <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$filter=Category eq 'Ransomware'&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank"> https://graph.microsoft.com/v1.0/security/alerts?$filter=Category eq 'Ransomware'</a>
+    </li>
+
+    <li>
+        <b>Get</b> all security alerts from a specific provider: <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$filter=vendorInformation/provider eq 'ASC'&$top=5&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank"> https://graph.microsoft.com/v1.0/security/alerts?filter=vendorInformation/provider eq 'ASC' </a>
+    </li>
+
+    <li>
+        <b>Patch</b> update security alert details of a specific alert: <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts/{alert-id}&method=PATCH&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">
+            https://graph.microsoft.com/v1.0/security/alerts/{alertId}
+            Request Body:
+            {
+            "comments": "Updated Alert",
+            "status": "InProgress",
+            "feedback":"TruePositive"
+            }
+        </a>
+    </li>
+    <li>
+        <b>Get</b> skip the next top (latest) 5 security alerts from each provider:
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$top=5&$skip=5 &method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/v1.0/security/alerts?$top=5&$skip=5 </a>
+    </li>
+
+    <li>
+        <b>Get</b> the 'Title' of the top 5 alerts from each provider:
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$top=5&$select=title&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/v1.0/security/alerts?$top=5&$select=title</a>
+    </li>
+    <li>
+        <b>Get</b> security alerts  from all providers filtered by event DateTime:
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$filter=eventDateTime gt 2018-09-01T00:00:00.000Z&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/v1.0/security/alerts?$filter=eventDateTime gt 2018-09-01T00:00:00.000Z</a>
+    </li>
+    <li>
+        <b>Get</b> dateTime of my last 25 security alerts from a specific provider:
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$top=25&$orderby=eventDateTime desc&$filter=vendorInformation/provider eq 'ASC' &method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/v1.0/security/alerts?$top=25&$orderby=eventDateTime desc&$filter=vendorInformation/provider eq 'ASC'</a>
+    </li>
+    <li>
+        <b>Get</b> latest 10 security alerts for a host with a specificNetBIOSName (FQDN without the domain suffix):
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$filter=hostStates/any(a:a/netBiosName eq 'lap-pattif')&$top=10&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/v1.0/security/alerts?$filter=hostStates/any(a:a/netBiosName eq 'lap-pattif')&$top=10</a>
+    </li>
+    <li>
+        <b>Get</b> top 10 alerts from each provider for time range (between startDateTime and endDateTime):
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$filter=createdDateTime+ge+2018-09-20T07:00:00.000Z+and+createdDateTime+le+2018-09-20T21:00:00.000Z&$top=10&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/v1.0/security/alerts?$filter=createdDateTime+ge+2018-09-20T07:00:00.000Z+and+createdDateTime+le+2018-09-20T21:00:00.000Z&$top=10</a>
+    </li>
+    <li>
+        <b>Get</b> all alerts from any provider containing a network connection to a specific (malicious) URL:
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/alerts?$filter=networkConnections/any(a:a/destinationUrl eq 'http://willaimsclarke.com/lee/fre.php')&method=GET&version=v1.0&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/v1.0/security/alerts?$filter=networkConnections/any(a:a/destinationUrl eq 'http://willaimsclarke.com/lee/fre.php')</a>
+    </li>
+    <li>
+        <b>Get</b> latest Secure Score for your organization (note: SecureScore is currently in /beta/):
+        <a href="https://developer.microsoft.com/en-us/graph/graph-explorer?request=security/securescores?$top=1&method=GET&version=beta&GraphUrl=https://graph.microsoft.com" target="_blank">https://graph.microsoft.com/beta/security/securescores?$top=1</a>
+    </li>
+</ol>

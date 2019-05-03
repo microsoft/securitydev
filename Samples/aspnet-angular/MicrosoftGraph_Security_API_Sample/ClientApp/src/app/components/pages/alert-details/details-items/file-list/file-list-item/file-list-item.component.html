@@ -1,0 +1,10 @@
+<div style="flex: 2;" class="column" [ngClass]="{'clickable': item.name}"
+    (click)="onValueClick('file:name', item.name)">
+    {{ item.name || 'No Data' }}
+</div>
+<div style="flex: 2;" class="column" [ngClass]="{'clickable': item.path}"
+    (click)="onValueClick('file:path', item.path)">{{ item.path || 'No Data' }}</div>
+<div style="flex: 1; max-width: 100px;" class="column" [ngClass]="{'clickable': item.riskScore}"
+    (click)="onValueClick('file:riskscore', item.riskScore)">{{ item.riskScore || 'No Data' }}</div>
+<div style="flex: 1; max-width: 100px;" class="column">{{ item.fileHash?.hashType || 'No Data' }}</div>
+<div style="flex: 3;" class="column">{{ item.fileHash?.hashValue || 'No Data' }}</div>

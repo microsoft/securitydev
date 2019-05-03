@@ -1,0 +1,149 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 10px;
+}
+
+:host:nth-child(odd) {
+    background: #F6F6F6;
+}
+
+:host:nth-child(even) {
+    background: white;
+}
+
+.main-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+    font-family: SegoeUI;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2D2D2D;
+    text-transform: capitalize;
+    user-select: none;
+}
+
+.main-container:hover {
+    cursor: pointer;
+}
+
+.main-container>svg {
+    position: absolute;
+    right: 10px;
+    transition: transform .1s ease-in-out;
+}
+
+.main-container.expanded>svg {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
+.expandable-content {
+    display: flex;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0px;
+    transition: .3s;
+}
+
+.expandable-content.expanded {
+    visibility: visible;
+    height: auto;
+    margin: 15px 0;
+}
+
+.header-cols {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: calc(100% - 20px);
+    font-size: 14px;
+}
+
+.action-col {
+    width: 60%;
+}
+
+.category-col, .score-col {
+    width: 20%;
+}
+
+.left-part {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.right-part {
+    width: 40%;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    min-height: 40px;
+    max-width: 90%;
+    margin: 5px 0;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 0 5px 0;
+}
+
+.info {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+a.info {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.grey-container {
+    display: flex;
+    flex-direction: column;
+    background: #F6F6F6;
+    padding: 10px;
+}
+
+.table-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-info-header {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.table-info-col {
+    width: 20%;
+    padding: 0 10px;
+}
+
+.table-info-content {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    height: 60px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.table-info-content:nth-child(odd) {
+    background: #F6F6F6;
+}

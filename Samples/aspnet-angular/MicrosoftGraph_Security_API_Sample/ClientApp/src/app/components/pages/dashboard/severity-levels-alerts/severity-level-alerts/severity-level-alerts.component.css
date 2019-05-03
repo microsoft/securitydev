@@ -1,0 +1,33 @@
+div,p{
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+div {
+    height: 8px;
+    width: 8px;
+    min-width: 8px;
+    border-radius: 200%;
+}
+p{
+    margin-left: 5px;
+    font-family: "SegoeUI";
+    font-size: 14px;  
+    font-weight: 500;
+}
+
+.severity-level.High {
+    background: #C00000;
+}
+
+.severity-level.Medium {
+    background: #FFC700;
+}
+
+.severity-level.Low {
+    background: #F2994A;
+}
+
+.severity-level.Informational {
+    background: #C4C4C4;
+}

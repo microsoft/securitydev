@@ -1,0 +1,5 @@
+<div *ngIf="items && items.length" class="breadcrumbs-container">
+    <a *ngFor="let item of items" routerLink="{{item.URL}}" class="breadcrumb">
+        {{ item.Title }}
+    </a>
+</div>

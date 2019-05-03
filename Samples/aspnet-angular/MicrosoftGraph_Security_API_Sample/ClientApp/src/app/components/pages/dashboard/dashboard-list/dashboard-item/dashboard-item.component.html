@@ -1,0 +1,8 @@
+<div style="flex: 1" class="column">
+    <div class="title clickable" (click)="onClick()">
+        {{item.specification.title}}
+    </div>
+</div>
+<div style="flex: 1" class="column">
+    <app-severity-levels-alerts [values]="item.values" [direction]="row"></app-severity-levels-alerts>
+</div>

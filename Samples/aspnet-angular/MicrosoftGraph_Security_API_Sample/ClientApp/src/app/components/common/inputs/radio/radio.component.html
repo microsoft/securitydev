@@ -1,0 +1,6 @@
+<div (click)="toggle()" class="radio-container">
+    <div class="radio" [ngClass]="{ 'checked': checked }">
+        <div *ngIf="checked"></div>
+    </div>
+    <label>{{ title }}</label>
+</div>

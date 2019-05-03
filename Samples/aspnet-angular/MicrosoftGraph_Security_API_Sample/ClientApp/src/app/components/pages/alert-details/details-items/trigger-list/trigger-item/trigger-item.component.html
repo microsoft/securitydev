@@ -1,0 +1,12 @@
+<div style="flex: 1;" class="column" [ngClass]="{'clickable': item.name}"
+    (click)="onValueClick('trigger:name', item.name)">
+    {{ item.name || 'No Data' }}
+</div>
+<div style="flex: 1;" class="column" [ngClass]="{'clickable': item.type}"
+    (click)="onValueClick('trigger:type', item.type)">
+    {{ item.type || 'No Data' }}
+</div>
+<div style="flex: 2;" class="column" [ngClass]="{'clickable': item.value}"
+    (click)="onValueClick('trigger:value', item.value)">
+    {{ item.value || 'No Data' }}
+</div>

@@ -1,0 +1,49 @@
+:host {
+    display: flex;
+    flex-shrink: 0;
+    background: white;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+    overflow: hidden;
+}
+
+.container:not(.fixed-width) {
+    flex: 3;
+}
+
+.container.fixed-width {
+    flex: 1;
+}
+
+.container:not(:last-child) {
+    border-right: 1px solid #E9E9E9;
+}
+
+.container>label {
+    font-family: SegoeUI;
+    font-size: 14px;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.row>* {
+    flex: 1;
+}
+
+.row>*:not(:last-child) {
+    margin-right: 10px;
+}

@@ -1,0 +1,27 @@
+<header>
+    <app-user-logo [user]="item.user"></app-user-logo>
+    <div class="title">{{ item.user.displayName }} updated alert</div>
+    <div>{{ item.updatedDateTime | timeAgo }}</div>
+</header>
+<div class="details-container">
+    <div class="row">
+        <div class="field fixed-width">
+            <app-clickable-property title="Status" [value]="item.status" [clickable]="false">
+            </app-clickable-property>
+        </div>
+        <div class="field fixed-width">
+            <app-clickable-property title="Feedback" [value]="item.feedback" [clickable]="false">
+            </app-clickable-property>
+        </div>
+        <div class="field">
+            <app-user-clickable-property title="Assigned to" [user]="item.assignedTo" [clickable]="false">
+            </app-user-clickable-property>
+        </div>
+    </div>
+    <div class="row">
+        <div class="field">
+            <app-clickable-property title="Comment" [value]="item.comments" [clickable]="false">
+            </app-clickable-property>
+        </div>
+    </div>
+</div>

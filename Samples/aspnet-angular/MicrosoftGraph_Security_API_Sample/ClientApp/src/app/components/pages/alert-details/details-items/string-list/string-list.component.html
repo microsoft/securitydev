@@ -1,0 +1,6 @@
+<app-expandable-list [title]="title" [isExpanded]="isExpanded">
+    <div *ngFor="let item of items" [title]="item" class="value" [ngClass]="{'clickable': clickable && item}"
+        (click)="onValueClick(item)">
+        {{ item }}
+    </div>
+</app-expandable-list>

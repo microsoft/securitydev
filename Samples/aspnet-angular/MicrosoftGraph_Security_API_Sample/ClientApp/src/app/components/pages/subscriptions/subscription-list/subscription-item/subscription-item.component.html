@@ -1,0 +1,5 @@
+<div style="flex: 3;" class="column">{{item.id}}</div>
+<div style="flex: 4;" class="column">{{item.resource}}</div>
+<div style="flex: 1;" class="column">{{item.changeType || 'No data'}}</div>
+<div style="flex: 3; max-width: 145px;" class="column">
+    {{ item.expirationDateTime | date : 'M/d/yyyy, h:mm a' }}</div>

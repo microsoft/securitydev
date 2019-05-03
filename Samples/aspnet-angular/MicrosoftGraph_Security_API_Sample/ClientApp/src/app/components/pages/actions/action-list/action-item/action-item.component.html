@@ -1,0 +1,36 @@
+<div style="flex: 2;" class="column">
+    <div *ngIf="item.target">
+        <div [title]="item.target.name" class="row">
+            {{item.target.name || 'No data'}}:
+        </div>
+        <div [title]="item.target.value" class="row clickable" (click)="onTargetValueClick()">
+            {{item.target.value || 'No data'}}
+        </div>
+    </div>
+</div>
+<div style="flex: 1; max-width: 50px;" class="column" [title]="item.name">
+  <div class="row">{{item.name || 'No data'}}</div>
+</div>
+<div style="flex: 2; max-width: 145px;" class="column" [title]="item.submittedDateTime">
+    <div class="row">{{item.submittedDateTime | date : 'M/d/yyyy, h:mm a' || 'No data' }}</div>
+</div>
+<div style="flex: 3;" class="column">
+    <div>
+        <div [title]="item.reason?.comment" class="row">
+            {{item.reason?.comment }}
+        </div>
+        <div *ngIf="item.reason?.alertId" [title]="item.reason?.alertId" class="row reason">
+            <b>Alert ID:</b>
+            <div class="row clickable" (click)="onAlertIdClick()">{{item.reason?.alertId}}</div>
+        </div>
+    </div>
+</div>
+<div style="flex: 2;" class="column" [title]="item.securityVendorInformation?.provider">
+    <div class="row">{{item.securityVendorInformation?.provider || 'No data'}}</div>
+</div>
+<div style="flex: 1; max-width: 70px;" class="column" [title]="item.status">
+    <div class="row">{{item.status || 'No data'}}</div>
+</div>
+<div style="flex: 2; max-width: 145px;" class="column" [title]="item.statusUpdateTime || ''">
+    <div class=" row">{{item.statusUpdateTime | date : 'M/d/yyyy, h:mm a' || 'No data' }}</div>
+</div>

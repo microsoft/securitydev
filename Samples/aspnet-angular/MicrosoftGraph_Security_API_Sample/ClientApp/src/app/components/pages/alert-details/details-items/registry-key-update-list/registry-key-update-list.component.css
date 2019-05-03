@@ -1,0 +1,9 @@
+:host {
+    display: flex;
+}
+
+:host app-user-item:not(:last-child) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E9E9E9;
+    margin-bottom: 10px;
+}

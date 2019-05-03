@@ -1,0 +1,12 @@
+<app-breadcrumbs *ngIf="breadcrumbItems && breadcrumbItems.length" [items]="breadcrumbItems"></app-breadcrumbs>
+<div class="titles">
+    <ng-content></ng-content>
+    <div *ngIf="isFiltersEnabled" class="title filters" (click)="onFilterClick()">
+        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0 0.125H18V2.0498L11.25 8.7998V15.875H6.75V8.7998L0 2.0498V0.125ZM16.875 1.5752V1.25H1.125V1.5752L7.875 8.3252V14.75H10.125V8.3252L16.875 1.5752Z"
+                fill="#0078D7" />
+        </svg>
+        filters
+    </div>
+</div>

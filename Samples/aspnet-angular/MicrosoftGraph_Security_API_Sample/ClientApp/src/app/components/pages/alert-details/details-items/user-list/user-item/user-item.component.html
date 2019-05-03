@@ -1,0 +1,136 @@
+<div class="user-container">
+    <div class="row-container row">
+        <div class="column">
+            <app-user-logo [user]="user" size="100"></app-user-logo>
+        </div>
+        <div class="column" style="flex:2;">
+            <div class="row">
+                <div class="column">
+                    <app-clickable-property title="Account name" [value]="user.displayName" filterKey="user:upn"
+                        [filterValue]="user.upn" (valueClick)="onValueClick($event)">
+                    </app-clickable-property>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <app-clickable-property title="User principal name" [value]="user.upn" filterKey="user:upn"
+                        (valueClick)="onValueClick($event)">
+                    </app-clickable-property>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-container">
+        <div class="row">
+            <div class="column">
+                <app-clickable-property title="Job title" [value]="user.jobTitle" [clickable]="false">
+                </app-clickable-property>
+            </div>
+            <div class="column">
+                <app-user-clickable-property title="Manager" [user]="user.manager" [clickable]="false">
+                </app-user-clickable-property>
+            </div>
+            <div class="column">
+                <app-clickable-property title="Contact via" [value]="user.contactVia" [clickable]="false">
+                </app-clickable-property>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <app-clickable-property title="Office location" [value]="user.officeLocation" [clickable]="false">
+                </app-clickable-property>
+            </div>
+            <div class="column" style="flex:2;">
+                <app-clickable-property title="Email" [value]="user.email" [clickable]="false">
+                </app-clickable-property>
+            </div>
+        </div>
+    </div>
+    <div class="row-container">
+      <div class="row">
+        <div class="column">
+          <app-clickable-property title="Email role" [value]="user.emailRole" filterKey="user:emailrole"
+                                  (valueClick)="onValueClick($event)">
+          </app-clickable-property>
+        </div>
+        <div class="column">
+          <app-clickable-property title="Risk score" [value]="user.riskScore" filterKey="user:riskscore"
+                                  (valueClick)="onValueClick($event)">
+          </app-clickable-property>
+        </div>
+        <div class="column">
+          <app-clickable-property title="Logon ID" [value]="user.logonId" filterKey="user:logonid"
+                                  (valueClick)="onValueClick($event)">
+          </app-clickable-property>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <app-clickable-property title="Domain name" [value]="user.domainName" filterKey="user:domainname"
+                                  (valueClick)="onValueClick($event)">
+          </app-clickable-property>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="user.riskyUser" class="row-container">
+        <div class="row">
+            <div class="column">
+                <app-clickable-property title="Risk Level" [value]="user.riskyUser.riskLevel" [clickable]="false">
+                </app-clickable-property>
+            </div>
+            <div class="column">
+                <app-clickable-property title="Risk State" [value]="user.riskyUser.riskState" [clickable]="false">
+                </app-clickable-property>
+            </div>
+            <div class="column">
+                <app-clickable-property title="Risk Details" [value]="user.riskyUser.riskDetail" [clickable]="false">
+                </app-clickable-property>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="device-container">
+    <header class="device-content-header">{{ selectedDevice ? 'Registered device' : 'No data about user devices' }}
+    </header>
+    <div *ngIf="selectedDevice" class="device-content">
+        <header>
+            <svg width="31" height="20" viewBox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M29.5674 15.8281C29.682 15.9427 29.7861 16.0938 29.8799 16.2812C29.9736 16.4583 30.0518 16.651 30.1143 16.8594C30.1768 17.0573 30.2236 17.2604 30.2549 17.4688C30.2965 17.6667 30.3174 17.8438 30.3174 18C30.3174 18.2604 30.2601 18.5104 30.1455 18.75C30.0413 18.9896 29.8955 19.2031 29.708 19.3906C29.5205 19.5781 29.307 19.7292 29.0674 19.8438C28.8278 19.9479 28.5778 20 28.3174 20H2.31738C2.05697 20 1.80697 19.9479 1.56738 19.8438C1.3278 19.7292 1.11426 19.5781 0.926758 19.3906C0.739258 19.2031 0.588216 18.9896 0.473633 18.75C0.369466 18.5104 0.317383 18.2604 0.317383 18C0.317383 17.8438 0.333008 17.6667 0.364258 17.4688C0.405924 17.2604 0.458008 17.0573 0.520508 16.8594C0.583008 16.651 0.661133 16.4583 0.754883 16.2812C0.848633 16.0938 0.952799 15.9427 1.06738 15.8281L4.31738 12.5781V0H26.3174V12.5781L29.5674 15.8281ZM6.31738 12H24.3174V2H6.31738V12ZM28.3174 17.9531C28.3174 17.9115 28.307 17.8542 28.2861 17.7812C28.2757 17.6979 28.2549 17.6198 28.2236 17.5469C28.2028 17.4635 28.1768 17.3854 28.1455 17.3125C28.1247 17.2396 28.0986 17.1875 28.0674 17.1562L24.8955 14H5.73926L2.56738 17.1562C2.53613 17.1875 2.50488 17.2396 2.47363 17.3125C2.4528 17.3854 2.42676 17.4635 2.39551 17.5469C2.37467 17.6198 2.35384 17.6979 2.33301 17.7812C2.32259 17.8542 2.31738 17.9115 2.31738 17.9531L2.36426 18H28.2705L28.3174 17.9531Z"
+                    fill="#0078D7" />
+            </svg>
+            {{ selectedDevice.displayName  || 'No data' }}
+        </header>
+        <div class="row">
+            <div class="column">
+                <app-clickable-property title="Device ID" [value]="selectedDevice.deviceId" [clickable]="false">
+                </app-clickable-property>
+                <app-clickable-property title="Device name" [value]="selectedDevice.displayName" [clickable]="false">
+                </app-clickable-property>
+                <app-clickable-property title="Device version" [value]="selectedDevice.deviceVersion"
+                    [clickable]="false">
+                </app-clickable-property>
+                <app-boolean-clickable-property title="Is compliant" [value]="selectedDevice.isCompliant"
+                    [clickable]="false">
+                </app-boolean-clickable-property>
+                <app-clickable-property title="Operating system" [value]="selectedDevice.operatingSystem"
+                    [clickable]="false">
+                </app-clickable-property>
+            </div>
+            <div class="column">
+                <app-clickable-property title="Operating system version" [value]="selectedDevice.operatingSystemVersion"
+                    [clickable]="false">
+                </app-clickable-property>
+                <app-boolean-clickable-property title="Is managed" [value]="selectedDevice.isManaged"
+                    [clickable]="false">
+                </app-boolean-clickable-property>
+                <app-boolean-clickable-property title="Is account enabled" [value]="selectedDevice.accountEnabled"
+                    [clickable]="false">
+                </app-boolean-clickable-property>
+                <app-datetime-clickable-property title="Approximate last sign in date time"
+                    [value]="selectedDevice.approximateLastSignInDateTime" [clickable]=" false">
+                </app-datetime-clickable-property>
+            </div>
+        </div>
+    </div>
+</div>

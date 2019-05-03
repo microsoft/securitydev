@@ -1,0 +1,50 @@
+:host {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+}
+
+.main-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 26px;
+    font-family: SegoeUI;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2D2D2D;
+    text-transform: capitalize;
+    user-select: none;
+}
+
+.main-container:hover {
+    cursor: pointer;
+}
+
+.main-container>svg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: transform .1s ease-in-out;
+}
+
+.main-container.expanded>svg {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
+.expandable-content {
+    overflow: hidden;
+    visibility: hidden;
+    height: 0px;
+    transition: all .1s ease-in-out;
+}
+
+.expandable-content.expanded {
+    visibility: visible;
+    height: auto;
+    margin-top: 15px;
+}

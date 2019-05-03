@@ -1,0 +1,5 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div *ngFor="let control of controls" class="form-field">
+        <app-dynamic-form-control [control]="control" [form]="form"></app-dynamic-form-control>
+    </div>
+</form>

@@ -1,0 +1,160 @@
+:host {
+    flex-grow: 1;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+.header-title {
+    font-family: SegoeUI;
+    font-size: 20px;
+    color: #2D2D2D;
+    margin-top: 7px;
+    text-transform: capitalize;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 20px 20px 20px;
+    background: white;
+    overflow: hidden;
+}
+
+.info-bar {
+    display: flex;
+    flex-shrink: 0;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.diagrams {
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 50%;
+    border-right: 1px solid #E9E9E9;
+}
+
+.list-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.actions-list {
+    overflow: hidden;
+}
+
+.list-toolbar-title {
+    display: flex;
+    flex-grow: 1;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.toolbar-options {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+
+.toolbar-item {
+    width: 165px;
+    margin: 0 0 0 25px;
+}
+
+.list-header {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    padding: 10px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.action-col {
+    width: 60%;
+}
+
+.category-col,
+.score-col {
+    width: 20%;
+}
+
+.expand-all {
+    position: absolute;
+    right: 10px;
+    color: #0078D7;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.expand-all:hover {
+    text-decoration: underline;
+}
+
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.info-panel-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.info-table {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.info-table-header {
+    display: flex;
+    border-bottom: 1px solid #E9E9E9;
+    font-size: 12px;
+}
+
+.info-table-row {
+    display: flex;
+    font-size: 14px;
+}
+
+.info-table-row:nth-child(odd) {
+    background: #F6F6F6;
+}
+
+.info-table-row:nth-child(even) {
+    background: white;
+}
+
+.info-table-column {
+    display: flex;
+    width: 10%;
+    padding: 6px;
+}
+
+.info-table-column.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.big-col {
+    display: flex;
+    width: 80%;
+}

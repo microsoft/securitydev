@@ -1,0 +1,11 @@
+<div [ngClass]="{'dashboard-flex-container': isDashboard, 'secure-score-flex-container': isSecureScore}">
+  <div class="doughnut-container">
+    <span *ngIf="isDashboard">Secure score</span>
+    <app-doughnut-diagram [isSecureScore]="isSecureScore" [isDashboard]="isDashboard" [doughnutData]="doughnutData">
+    </app-doughnut-diagram>
+  </div>
+  <div [ngClass]="{'dash-bar-container': isDashboard, 'secure-bar-container': isSecureScore}">
+    <span>Compare your score</span>
+    <app-bar-diagram [barData]="barData" [isSecureScore]="isSecureScore"></app-bar-diagram>
+  </div>
+</div>

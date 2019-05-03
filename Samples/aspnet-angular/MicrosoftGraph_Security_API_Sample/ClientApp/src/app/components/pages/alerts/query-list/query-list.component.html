@@ -1,0 +1,6 @@
+<div class="queries-list-container">
+    <app-query-item *ngFor="let key of objectKeys(queries)" [title]="key" [value]="queries[key]"></app-query-item>
+</div>
+<div class="action-button">
+    <app-button title="Subscribe" (click)="subscribe()"></app-button>
+</div>

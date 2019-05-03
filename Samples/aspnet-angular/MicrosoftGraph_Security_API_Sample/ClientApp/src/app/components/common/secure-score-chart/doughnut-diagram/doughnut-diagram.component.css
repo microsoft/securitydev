@@ -1,0 +1,41 @@
+:host {
+    display: flex;
+    align-items: center;
+}
+
+.secure-score-diagram-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dashboard-diagram-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.top>div {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.8);
+}

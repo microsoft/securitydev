@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+    overflow: hidden;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: a;
+}
+
+.list-container>.container-header {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: #2D2D2D;
+    margin-bottom: 19px;
+    flex-shrink: 0;
+}
+
+.list-container>.list-header {
+    display: flex;
+    border-bottom: 1px solid #E9E9E9;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.list-container>.list-header>.column {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: SegoeUI;
+    font-size: 12px;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.list-container>.list-header>.column:not(:last-child) {
+    margin-right: 10px;
+}
+
+.list-container>.list-header>.column:first-child {
+    padding-left: 13px;
+}

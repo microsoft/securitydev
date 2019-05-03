@@ -1,0 +1,23 @@
+.breadcrumbs-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.breadcrumbs-container>.breadcrumb {
+    font-family: SegoeUI;
+    font-size: 12px;
+    color: #0078D7;
+    text-decoration: none;
+}
+
+.breadcrumbs-container>.breadcrumb:hover {
+    color: #2D2D2D;
+}
+
+.breadcrumbs-container>.breadcrumb:not(:last-child)::after {
+    content: ">";
+    color: #0078D7;
+    margin: 0 5px 0 3px;
+    cursor: default;
+}

@@ -1,0 +1,11 @@
+<app-expandable-list [title]="title" [isExpanded]="isExpanded">
+    <header class="list-header">
+        <div style="flex: 2;" class="column">Name</div>
+        <div style="flex: 2;" class="column">Path</div>
+        <div style="flex: 1; max-width: 100px;" class="column">Risk score</div>
+        <div style="flex: 1; max-width: 100px;" class="column">Hash Type</div>
+        <div style="flex: 3;" class="column">Hash Value</div>
+    </header>
+    <app-file-list-item *ngFor="let item of items" [item]="item" (valueClick)="onValueClick($event)">
+    </app-file-list-item>
+</app-expandable-list>

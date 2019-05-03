@@ -1,0 +1,54 @@
+:host {
+    display: flex;
+    height: 60px;
+}
+
+:host(:nth-child(even)) {
+    background: #F6F6F6;
+}
+
+:host>.column {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
+    overflow: hidden;
+    word-break: break-word;
+    margin-right: 10px;
+}
+
+:host>.column:first-child {
+    padding-left: 13px;
+    color: black;
+}
+
+:host>.column>div {
+    overflow: hidden;
+}
+
+:host>.column div.row {
+    overflow: hidden;
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+:host>.column div.row.reason {
+    display: flex;
+}
+
+:host>.column div.row.reason>b {
+    margin-right: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    width: 15px;
+    flex-shrink: 0;
+}

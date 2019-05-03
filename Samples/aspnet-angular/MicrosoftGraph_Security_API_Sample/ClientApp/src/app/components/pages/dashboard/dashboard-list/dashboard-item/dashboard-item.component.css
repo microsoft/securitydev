@@ -1,0 +1,37 @@
+:host {
+    display: flex;
+    height: 60px;
+}
+
+:host(:nth-child(even)) {
+    background: #F6F6F6;
+}
+
+:host>.column {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    word-break: break-word;
+}
+
+:host>.column:not(:last-child) {
+    margin-right: 10px;
+}
+
+:host>.column:first-child {
+    padding-left: 13px;
+    color: black;
+}
+:host>.column:last-child {
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+.title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

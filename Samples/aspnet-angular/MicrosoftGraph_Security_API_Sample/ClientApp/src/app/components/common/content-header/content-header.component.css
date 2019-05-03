@@ -1,0 +1,18 @@
+.titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.title.filters {
+    width: 326px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.title.filters>svg {
+    margin: 2px 6px 0 15px;
+}

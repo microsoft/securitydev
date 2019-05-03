@@ -1,0 +1,53 @@
+<app-content-header [title]="title" [breadcrumbItems]="breadcrumbItems">
+    <div class="header-title"> {{ title }} </div>
+</app-content-header>
+<div class="content-page">
+    <div class="left-content" *ngIf="alertsByStatus">
+        <header class="content-header">By Status</header>
+        <perfect-scrollbar class="column-scroll" fxFlex>
+            <div class="scrollable-content">
+                <app-operation-statuses-alerts [alertsByStatus]="alertsByStatus"></app-operation-statuses-alerts>
+                <app-secure-score-chart [isDashboard]="true" [barData]="barData" [doughnutData]="doughnutData">
+                </app-secure-score-chart>
+            </div>
+        </perfect-scrollbar>
+    </div>
+
+    <div class="center-content" *ngIf="alertsByEntity">
+        <header class="content-header">By Entity</header>
+        <perfect-scrollbar class="column-scroll" fxFlex>
+            <div class="scrollable-content">
+                <div class="by-entity">
+                    <div class="entity-list" *ngIf="alertsByEntity.usersWithTheMostAlerts">
+                        <header>Risky Users</header>
+                        <app-dashboard-list [items]="alertsByEntity.usersWithTheMostAlerts" key="user:upn"
+                            (valueClick)="filterAlert($event)">
+                        </app-dashboard-list>
+                    </div>
+                    <div class="entity-list" *ngIf="alertsByEntity.hostsWithTheMostAlerts">
+                        <header>Risky Hosts</header>
+                        <app-dashboard-list [items]="alertsByEntity.hostsWithTheMostAlerts" key="host:fqdn"
+                            (valueClick)="filterAlert($event)">
+                        </app-dashboard-list>
+                    </div>
+                    <div class=" entity-list" *ngIf="alertsByEntity.domainsWithTheMostAlerts">
+                        <header>Risky Domains</header>
+                        <app-dashboard-list [items]="alertsByEntity.domainsWithTheMostAlerts" key="netconn:destinationdomain"
+                            (valueClick)="filterAlert($event)">
+                        </app-dashboard-list>
+                    </div>
+                </div>
+            </div>
+        </perfect-scrollbar>
+    </div>
+
+    <div class="right-content" *ngIf="alertsByProvider">
+        <header class="content-header">Alerts by Provider</header>
+        <perfect-scrollbar class="column-scroll" fxFlex>
+            <div class="scrollable-content">
+                <app-dashboard-list [items]="alertsByProvider" key="vendor:provider" (valueClick)="filterAlert($event)">
+                </app-dashboard-list>
+            </div>
+        </perfect-scrollbar>
+    </div>
+</div>

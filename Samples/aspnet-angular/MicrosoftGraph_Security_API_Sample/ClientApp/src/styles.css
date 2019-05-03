@@ -1,0 +1,426 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: SegoeUI;
+    src: url(assets/fonts/segoeui.ttf);
+}
+
+@font-face {
+    font-family: SegoeUI-Bold;
+    src: url(assets/fonts/segoeuib.ttf);
+}
+
+@font-face {
+    font-family: SegoeUI-Italic;
+    src: url(assets/fonts/segoeuii.ttf);
+}
+
+@font-face {
+    font-family: SegoeUI-BoldItalic;
+    src: url(assets/fonts/segoeuiz.ttf);
+}
+
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+body {
+    margin: 0;
+    background: #E9E9E9;
+    font-family: SegoeUI;
+}
+
+.page-content-linear-container {
+    width: calc(100% - 34px);
+    padding: 15px 17px;
+    background: white;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.clickable {
+    color: #0078D7 !important;
+    cursor: pointer !important;
+    text-decoration: none;
+}
+
+/* override some internal styles for DateTime Picker*/
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-content {
+    border-radius: 0 !important;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-selected,
+button.owl-dt-control-button.owl-dt-timer-hour12-box:hover>span.owl-dt-control-button-content {
+    background: #0078D7 !important;
+}
+
+.ng-tns-c20-0.owl-dt-container.owl-dt-popup-container {
+    font-family: SegoeUI;
+    font-size: 16px;
+}
+
+input.owl-dt-timer-input,
+button.owl-dt-control-button.owl-dt-timer-hour12-box {
+    border-radius: 0 !important;
+    border-color: rgba(0, 0, 0, .5) !important;
+    font-family: SegoeUI;
+}
+
+.owl-dt-timer-divider:after,
+.owl-dt-timer-divider:before {
+    width: 0.25em !important;
+    height: .25em !important;
+}
+
+.owl-dt-timer-divider:before {
+    top: 40% !important;
+}
+
+.owl-dt-timer-divider:after {
+    bottom: 40% !important;
+}
+
+.dashboard-nut {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.secure-score-nut {
+    min-width: 150px;
+    max-width: 150px;
+}
+
+g>g>text {
+    stroke-width: 0;
+    stroke: none;
+    fill: white;
+    pointer-events: none;
+}
+
+/* Loader styles */
+
+.loader-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-text {
+    margin-top: 15px;
+    font-family: SegoeUI;
+    font-size: 16px;
+    color: #0078D7;
+}
+
+.windows8 {
+    position: relative;
+    width: 58px;
+    height: 58px;
+}
+
+.windows8 .wBall {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    opacity: 0;
+    transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    animation: orbit 4.5325s infinite;
+    -o-animation: orbit 4.5325s infinite;
+    -ms-animation: orbit 4.5325s infinite;
+    -webkit-animation: orbit 4.5325s infinite;
+    -moz-animation: orbit 4.5325s infinite;
+}
+
+.windows8 .wBall .wInnerBall {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #0078D7;
+    left: 0px;
+    top: 0px;
+    border-radius: 7px;
+}
+
+.windows8 #wBall_1 {
+    animation-delay: 0.986s;
+    -o-animation-delay: 0.986s;
+    -ms-animation-delay: 0.986s;
+    -webkit-animation-delay: 0.986s;
+    -moz-animation-delay: 0.986s;
+}
+
+.windows8 #wBall_2 {
+    animation-delay: 0.193s;
+    -o-animation-delay: 0.193s;
+    -ms-animation-delay: 0.193s;
+    -webkit-animation-delay: 0.193s;
+    -moz-animation-delay: 0.193s;
+}
+
+.windows8 #wBall_3 {
+    animation-delay: 0.3965s;
+    -o-animation-delay: 0.3965s;
+    -ms-animation-delay: 0.3965s;
+    -webkit-animation-delay: 0.3965s;
+    -moz-animation-delay: 0.3965s;
+}
+
+.windows8 #wBall_4 {
+    animation-delay: 0.5895s;
+    -o-animation-delay: 0.5895s;
+    -ms-animation-delay: 0.5895s;
+    -webkit-animation-delay: 0.5895s;
+    -moz-animation-delay: 0.5895s;
+}
+
+.windows8 #wBall_5 {
+    animation-delay: 0.793s;
+    -o-animation-delay: 0.793s;
+    -ms-animation-delay: 0.793s;
+    -webkit-animation-delay: 0.793s;
+    -moz-animation-delay: 0.793s;
+}
+
+@keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index: 99;
+        transform: rotate(180deg);
+        animation-timing-function: ease-out;
+    }
+    7% {
+        opacity: 1;
+        transform: rotate(300deg);
+        animation-timing-function: linear;
+        origin: 0%;
+    }
+    30% {
+        opacity: 1;
+        transform: rotate(410deg);
+        animation-timing-function: ease-in-out;
+        origin: 7%;
+    }
+    39% {
+        opacity: 1;
+        transform: rotate(645deg);
+        animation-timing-function: linear;
+        origin: 30%;
+    }
+    70% {
+        opacity: 1;
+        transform: rotate(770deg);
+        animation-timing-function: ease-out;
+        origin: 39%;
+    }
+    75% {
+        opacity: 1;
+        transform: rotate(900deg);
+        animation-timing-function: ease-out;
+        origin: 70%;
+    }
+    76% {
+        opacity: 0;
+        transform: rotate(900deg);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(900deg);
+    }
+}
+
+@-o-keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index: 99;
+        -o-transform: rotate(180deg);
+        -o-animation-timing-function: ease-out;
+    }
+    7% {
+        opacity: 1;
+        -o-transform: rotate(300deg);
+        -o-animation-timing-function: linear;
+        -o-origin: 0%;
+    }
+    30% {
+        opacity: 1;
+        -o-transform: rotate(410deg);
+        -o-animation-timing-function: ease-in-out;
+        -o-origin: 7%;
+    }
+    39% {
+        opacity: 1;
+        -o-transform: rotate(645deg);
+        -o-animation-timing-function: linear;
+        -o-origin: 30%;
+    }
+    70% {
+        opacity: 1;
+        -o-transform: rotate(770deg);
+        -o-animation-timing-function: ease-out;
+        -o-origin: 39%;
+    }
+    75% {
+        opacity: 1;
+        -o-transform: rotate(900deg);
+        -o-animation-timing-function: ease-out;
+        -o-origin: 70%;
+    }
+    76% {
+        opacity: 0;
+        -o-transform: rotate(900deg);
+    }
+    100% {
+        opacity: 0;
+        -o-transform: rotate(900deg);
+    }
+}
+
+@-ms-keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index: 99;
+        -ms-transform: rotate(180deg);
+        -ms-animation-timing-function: ease-out;
+    }
+    7% {
+        opacity: 1;
+        -ms-transform: rotate(300deg);
+        -ms-animation-timing-function: linear;
+        -ms-origin: 0%;
+    }
+    30% {
+        opacity: 1;
+        -ms-transform: rotate(410deg);
+        -ms-animation-timing-function: ease-in-out;
+        -ms-origin: 7%;
+    }
+    39% {
+        opacity: 1;
+        -ms-transform: rotate(645deg);
+        -ms-animation-timing-function: linear;
+        -ms-origin: 30%;
+    }
+    70% {
+        opacity: 1;
+        -ms-transform: rotate(770deg);
+        -ms-animation-timing-function: ease-out;
+        -ms-origin: 39%;
+    }
+    75% {
+        opacity: 1;
+        -ms-transform: rotate(900deg);
+        -ms-animation-timing-function: ease-out;
+        -ms-origin: 70%;
+    }
+    76% {
+        opacity: 0;
+        -ms-transform: rotate(900deg);
+    }
+    100% {
+        opacity: 0;
+        -ms-transform: rotate(900deg);
+    }
+}
+
+@-webkit-keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index: 99;
+        -webkit-transform: rotate(180deg);
+        -webkit-animation-timing-function: ease-out;
+    }
+    7% {
+        opacity: 1;
+        -webkit-transform: rotate(300deg);
+        -webkit-animation-timing-function: linear;
+        -webkit-origin: 0%;
+    }
+    30% {
+        opacity: 1;
+        -webkit-transform: rotate(410deg);
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-origin: 7%;
+    }
+    39% {
+        opacity: 1;
+        -webkit-transform: rotate(645deg);
+        -webkit-animation-timing-function: linear;
+        -webkit-origin: 30%;
+    }
+    70% {
+        opacity: 1;
+        -webkit-transform: rotate(770deg);
+        -webkit-animation-timing-function: ease-out;
+        -webkit-origin: 39%;
+    }
+    75% {
+        opacity: 1;
+        -webkit-transform: rotate(900deg);
+        -webkit-animation-timing-function: ease-out;
+        -webkit-origin: 70%;
+    }
+    76% {
+        opacity: 0;
+        -webkit-transform: rotate(900deg);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: rotate(900deg);
+    }
+}
+
+@-moz-keyframes orbit {
+    0% {
+        opacity: 1;
+        z-index: 99;
+        -moz-transform: rotate(180deg);
+        -moz-animation-timing-function: ease-out;
+    }
+    7% {
+        opacity: 1;
+        -moz-transform: rotate(300deg);
+        -moz-animation-timing-function: linear;
+        -moz-origin: 0%;
+    }
+    30% {
+        opacity: 1;
+        -moz-transform: rotate(410deg);
+        -moz-animation-timing-function: ease-in-out;
+        -moz-origin: 7%;
+    }
+    39% {
+        opacity: 1;
+        -moz-transform: rotate(645deg);
+        -moz-animation-timing-function: linear;
+        -moz-origin: 30%;
+    }
+    70% {
+        opacity: 1;
+        -moz-transform: rotate(770deg);
+        -moz-animation-timing-function: ease-out;
+        -moz-origin: 39%;
+    }
+    75% {
+        opacity: 1;
+        -moz-transform: rotate(900deg);
+        -moz-animation-timing-function: ease-out;
+        -moz-origin: 70%;
+    }
+    76% {
+        opacity: 0;
+        -moz-transform: rotate(900deg);
+    }
+    100% {
+        opacity: 0;
+        -moz-transform: rotate(900deg);
+    }
+}

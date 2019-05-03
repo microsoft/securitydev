@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Notifications</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+        <h2>Notifications</h2>
+        <p>ISG SDK Subscription notifications will appear on this page.
+        <p><b>Note:</b> The page will self-refresh – it may take several seconds for the notification to be displayed.</p>
+        <hr />
+        <br />
+        <div id="message" style="overflow-y: auto;"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="/signalr.min.js"></script>
+    <script>
+        let hubUrl = '/notifications';
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl(hubUrl)
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
+        let userName = '';
+        hubConnection.on('Send', function (messages) {
+            $.each(messages, function (index, current) {
+                {
+                    var table = $("<table></table>");
+                    $("<th>Message</th>").appendTo(table);
+                    var message = current.message;
+                    for (prop in message) { 
+                        var property = message[prop];
+                        var row = $("<tr></tr>");
+                        $("<td></td>").text(prop).appendTo(row);
+                        $("<td></td>").text(property).appendTo(row);
+                        table.append(row);
+                    }
+                    $("#message").append(table);
+                    $("#message").append("<br />");
+                }
+            });
+        });
+
+        hubConnection.start();
+    </script>
+</body>
+</html>

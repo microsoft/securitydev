@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.title {
+    font-family: SegoeUI;
+    font-size: 12px;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 5px;
+}
+
+.value {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.value:not(.untouched) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

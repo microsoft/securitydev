@@ -1,0 +1,41 @@
+p{
+    font-family: "Segoe UI";
+    margin-bottom: 0px;
+    margin-top:0px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.statuses{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+.operationStatus-sum{
+    display: flex;
+    flex:10;
+    flex-direction: column;
+    margin-left: 5px;
+}
+.operation-status{
+    font-size: 18px;
+}
+p.sum{
+    font-size: 40px;
+    color:black;
+    font-weight: normal;
+}
+.status-labels{
+    display: flex;
+    flex:3;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+app-severity-levels-alerts{
+    flex:3;
+}
+

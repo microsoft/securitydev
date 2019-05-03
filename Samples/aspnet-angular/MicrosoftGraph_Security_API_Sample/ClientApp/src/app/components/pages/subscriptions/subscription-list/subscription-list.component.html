@@ -1,0 +1,11 @@
+<div class="page-content-linear-container list-container">
+  <header class="list-header">
+    <div style="flex: 3;" class="column">Subscription ID</div>
+    <div style="flex: 4;" class="column">Query Filters (aka Resource)</div>
+    <div style="flex: 1;" class="column">Change Type</div>
+    <div style="flex: 3; max-width: 145px;" class="column">Expiration DateTime</div>
+  </header>
+  <perfect-scrollbar>
+    <app-subscription-item *ngFor="let subscription of subscriptions" [item]="subscription"></app-subscription-item>
+  </perfect-scrollbar>
+</div>

@@ -1,0 +1,73 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+:host>header {
+    display: flex;
+    align-items: center;
+}
+
+:host>header>div {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-left: 15px;
+}
+
+.details-container {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 5px 5px 5px;
+}
+
+.details-container>.row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 10px 19px;
+}
+
+.details-container>.row:not(:last-child) {
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.row>.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.row>.field.fixed-width {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.row>.field:not(.fixed-width) {
+    flex-grow: 1;
+}
+
+.field>.title {
+    font-family: SegoeUI;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+}
+
+.field>.value {
+    display: flex;
+    align-items: center;
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.field>.value>app-user-logo {
+    margin-right: 10px;
+}
+
+.field>.value:not(.untouched) {
+    text-transform: capitalize;
+}

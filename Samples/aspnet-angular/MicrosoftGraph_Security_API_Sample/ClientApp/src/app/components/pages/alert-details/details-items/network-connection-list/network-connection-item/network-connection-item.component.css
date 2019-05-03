@@ -1,0 +1,63 @@
+:host {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+:host(:nth-child(even)) {
+    background: #F6F6F6;
+}
+
+.row {
+    display: flex;
+    flex-grow: 1;
+}
+
+.row:not(:last-child) {
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.column:not(:last-child) {
+    margin-right: 10px;
+}
+
+.column>*:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.action-value {
+    display: flex;
+    align-items: flex-end;
+}
+
+.action-value>*:not(:last-child) {
+    margin-right: 15px;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 1px solid darkgray;
+    background: white;
+    padding: 3px;
+}
+
+.action>svg {
+    fill: rgba(0, 0, 0, 0.6);
+}
+
+.action:hover {
+    background: #E5F0F8;
+}

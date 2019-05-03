@@ -1,0 +1,12 @@
+<div class="column" [ngClass]="{'clickable': item.destinationServiceName}"
+    (click)="onValueClick('cloudapp:destinationservicename', item.destinationServiceName)">
+    {{ item.destinationServiceName || 'No Data' }}
+</div>
+<div class="column" [ngClass]="{'clickable': item.destinationServiceIp}"
+    (click)="onValueClick('cloudapp:destinationserviceip', item.destinationServiceIp)">
+    {{ item.destinationServiceIp || 'No Data' }}
+</div>
+<div class="column" [ngClass]="{'clickable': item.riskScore}"
+    (click)="onValueClick('cloudapp:riskscore', item.riskScore)">
+    {{ item.riskScore || 'No Data' }}
+</div>

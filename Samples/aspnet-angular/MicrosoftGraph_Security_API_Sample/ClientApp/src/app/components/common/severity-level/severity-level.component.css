@@ -1,0 +1,46 @@
+.severity-level {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.severity-level.small {
+    width: 22px;
+}
+
+.severity-level.large {
+    width: 44px;
+}
+
+.severity-level>div {
+    background: lightgray;
+}
+
+.severity-level.small>div {
+    width: 6px;
+    height: 6px;
+}
+
+.severity-level.large>div {
+    width: 12px;
+    height: 12px;
+}
+
+.severity-level.high>div {
+    background: #C00000;
+}
+
+.severity-level.medium>div:nth-child(1),
+.severity-level.medium>div:nth-child(2) {
+    background: #F2994A;
+}
+
+.severity-level.low>div:first-child {
+    background: #FFC700;
+}
+
+.severity-level.informational>div {
+    background: lightgray;
+}

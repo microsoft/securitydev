@@ -1,0 +1,19 @@
+:host{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+.box.row{
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+}
+.box.column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    justify-content: space-between;
+}
+app-severity-levels-alerts{
+    min-width: 30px;
+}

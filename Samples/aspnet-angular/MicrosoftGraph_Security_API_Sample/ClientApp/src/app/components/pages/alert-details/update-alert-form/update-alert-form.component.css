@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    flex-grow: 1;
+    padding: 16px 22px;
+}
+
+:host>label {
+    font-family: SegoeUI;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.form-row {
+    margin-top: 12px;
+}
+
+.form-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}

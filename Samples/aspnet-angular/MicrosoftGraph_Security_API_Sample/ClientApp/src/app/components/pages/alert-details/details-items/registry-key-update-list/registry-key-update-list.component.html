@@ -1,0 +1,4 @@
+<app-expandable-list [title]="title" [isExpanded]="isExpanded">
+    <app-registry-key-update-item *ngFor="let item of items" [item]="item" (valueClick)="onValueClick($event)">
+    </app-registry-key-update-item>
+</app-expandable-list>

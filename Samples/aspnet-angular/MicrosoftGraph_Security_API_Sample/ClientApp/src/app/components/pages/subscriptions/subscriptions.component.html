@@ -1,0 +1,13 @@
+<div class="page-content">
+    <div class="subscriptions">
+        <div class="header-content">
+            <app-content-header [title]="title" [breadcrumbItems]="breadcrumbItems">
+                <div class="header-title"> {{ title }} </div>
+                <app-button title="Notifications" (click)="notificationButtonClick()"></app-button>
+            </app-content-header>
+        </div>
+        <app-subscription-query-list *ngIf="queries" [queries]="queries"></app-subscription-query-list>
+        <app-subscription-list [subscriptions]="subscriptions"></app-subscription-list>
+    </div>
+    <app-subscription-filters (submitForm)="LoadSubscriptions()"></app-subscription-filters>
+</div>

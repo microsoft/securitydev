@@ -1,0 +1,49 @@
+:host {
+    display: flex;
+    height: 60px;
+}
+
+:host(:nth-child(even)) {
+    background: #F6F6F6;
+}
+
+:host(:hover) {
+    cursor: pointer;
+    background: #E5F0F8;
+}
+
+:host>.column {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
+    overflow: hidden;
+    word-break: break-word;
+    margin-right: 10px;
+}
+
+:host>.column:first-child {
+    padding-left: 13px;
+    color: black;
+}
+
+:host>.column>span {
+    overflow: hidden;
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.severity-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.severity-wrapper>span {
+    text-transform: capitalize;
+    margin-left: 10px;
+}

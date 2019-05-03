@@ -1,0 +1,47 @@
+<div class="page-content">
+  <app-content-header [breadcrumbItems]="breadcrumbItems">
+    <div class="header-title"> {{ title }} </div>
+  </app-content-header>
+  <div class="actions">
+    <div class="info-bar">
+      <div class="diagrams">
+        <app-secure-score-chart isSecureScore="true" [barData]="barData" [doughnutData]="doughnutData">
+        </app-secure-score-chart>
+      </div>
+      <div class="info-panel" *ngIf="doughnutData">
+        <div class="info-panel-bar">
+          <span style="font-size: 18px">Secure score for
+            {{ doughnutData.createdDateTime | date : 'M/d/yyyy, h:mm a' || 'No data' }}</span>
+          <span style="font-size: 30px">{{ doughnutData.currentScore }} / {{ doughnutData.maxScore }}</span>
+        </div>
+        <div class="info-table">
+          <div class="info-table-header">
+            <div class="info-table-column big-col">Category</div>
+            <div class="info-table-column center">Max Score</div>
+            <div class="info-table-column center">Actions</div>
+          </div>
+          <div *ngFor="let score of doughnutData.controlScores" class="info-table-row">
+            <div class="info-table-column big-col">{{ score.controlCategory }}</div>
+            <div class="info-table-column center">{{ score.score }}</div>
+            <div class="info-table-column center">{{ score.count }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-toolbar">
+      <div class="list-toolbar-title">All actions</div>
+    </div>
+    <div class="actions-list">
+      <perfect-scrollbar fxFlex>
+        <div class="list-header">
+          <span class="action-col">Action</span>
+          <span class="category-col">Category</span>
+          <span class="score-col">Score</span>
+          <span class="expand-all" (click)="expandAll()">{{ isExpandedAll ? 'Collapse All' : 'Expand All' }}</span>
+        </div>
+        <app-secure-score-expandable-list *ngFor="let action of actions" [action]="action" [isExpanded]="isExpandedAll">
+        </app-secure-score-expandable-list>
+      </perfect-scrollbar>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="page-content">
+    <app-content-header [title]="title" [breadcrumbItems]="breadcrumbItems">
+        <div class="header-title"> {{ title }} </div>
+    </app-content-header>
+    <div class="alerts">
+        <app-query-list *ngIf="queries" [queries]="queries"></app-query-list>
+        <app-alert-list [alerts]="alerts"></app-alert-list>
+    </div>
+</div>
+<app-filters (submitForm)="LoadAlerts()"></app-filters>

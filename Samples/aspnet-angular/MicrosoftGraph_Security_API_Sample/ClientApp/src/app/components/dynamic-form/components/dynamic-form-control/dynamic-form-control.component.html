@@ -1,0 +1,15 @@
+<div [formGroup]="form" [ngSwitch]="control.controlType">
+
+    <app-textfield *ngSwitchCase="controlType.HorizontalTextField" [title]="control.title" [type]="control.type"
+        [formControlName]="control.key" [placeholder]="control.placeholder">
+    </app-textfield>
+
+    <app-textfield *ngSwitchCase="controlType.VerticalTextField" vertical="true" [title]="control.title"
+        [type]="control.type" [formControlName]="control.key" [placeholder]="control.placeholder">
+    </app-textfield>
+
+    <app-select *ngSwitchCase="controlType.DropDown" [title]="control.title" [options]="control.options"
+        [formControlName]="control.key">
+    </app-select>
+
+</div>

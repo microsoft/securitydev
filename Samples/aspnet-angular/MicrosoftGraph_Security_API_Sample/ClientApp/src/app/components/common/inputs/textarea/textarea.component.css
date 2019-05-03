@@ -1,0 +1,42 @@
+:host {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+:host(.vertical) {
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+:host>label {
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: #2D2D2D;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 15px;
+    text-transform: capitalize;
+}
+
+:host(.vertical > label) {
+    width: auto;
+    margin-right: 0px;
+    margin-bottom: 6px;
+}
+
+:host>textarea {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    font-family: SegoeUI;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    resize: none;
+}

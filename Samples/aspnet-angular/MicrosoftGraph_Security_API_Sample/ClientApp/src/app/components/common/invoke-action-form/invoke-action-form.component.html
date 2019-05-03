@@ -1,0 +1,29 @@
+<label>{{ title }}</label>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="form-row">
+        <app-textfield title="Property name" vertical="true" type="text" formControlName="propertyName"
+            placeholder="Enter property name">
+        </app-textfield>
+    </div>
+    <div class="form-row">
+        <app-textfield title="Property value" vertical="true" type="text" formControlName="propertyValue"
+            placeholder="Enter property value">
+        </app-textfield>
+    </div>
+    <div class="form-row">
+        <app-select title="Action" [options]="values.actions" formControlName="action" placeholder="Select action">
+        </app-select>
+    </div>
+    <div class="form-row">
+        <app-select title="Provider" [options]="values.providers" formControlName="provider" visibleItems="4"
+            placeholder="Select provider"></app-select>
+    </div>
+    <div class="form-row">
+        <app-textarea title="Reason" vertical="true" type="text" formControlName="reason" placeholder="Enter reason">
+        </app-textarea>
+    </div>
+    <div class="form-actions">
+        <app-button class="submit" title="Invoke action" (btnClick)="submitForm()" [disabled]="!form.valid">
+        </app-button>
+    </div>
+</form>

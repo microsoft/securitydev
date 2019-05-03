@@ -1,0 +1,10 @@
+<div class="page-content">
+    <app-content-header [title]="title" [breadcrumbItems]="breadcrumbItems">
+        <div class="header-title"> {{ title }} </div>
+        <app-button title="New Action" (click)="newActionButtonClick()"></app-button>
+    </app-content-header>
+    <div class="actions">
+        <app-action-list [actions]="actions"></app-action-list>
+    </div>
+</div>
+<app-actions-filters (submitForm)="LoadActions()"></app-actions-filters>
