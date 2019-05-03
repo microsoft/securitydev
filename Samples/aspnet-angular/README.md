@@ -1,4 +1,6 @@
-# Microsoft Graph Security API Sample for ASP.NET 4.6 (REST) Demo V3.0
+# Microsoft Graph Security API Sample with Azure Active Directory Identity Protection API - Built using ASP.NET 4.6 (REST) and Angular
+
+Note: This sample is mainly derived from the [Microsoft Graph Security API for ASP.NET (REST) V3.0 Demo](https://github.com/microsoftgraph/aspnet-security-api-sample/tree/master/V3.0) and updated to include more contexts by tapping into Azure Active Directory Identity Protection RiskyUsers API.
 
 ## Table of contents
 
@@ -8,13 +10,13 @@
 - [Grant Admin consent to view Security data](#grant-admin-consent-to-view-security-data)
 - [Build and run the sample](#build-and-run-the-sample)
 - [Deploy the sample to Azure](#deploy-the-sample-to-azure)
-- [Microsoft Graph Security API Sample App v3.0 UI Walkthrough](#Demo-UI-walkthrough)
+- [Sample App UI Walkthrough](#Demo-UI-walkthrough)
 - [Questions and comments](#questions-and-comments)
 - [Additional resources](#additional-resources)
 
 ## Introduction
 
-This sample shows how to connect an ASP.NET 4.6 MVC web app using a Microsoft work or school (Azure Active Directory) account to the Microsoft Graph security API to retrieve security Alerts, update an Alert, create Security Actions and retrieve them, subscribe to Alert notifications, and also a sample listener for Alert notifications. It uses SDK and REST calls to interact with the Microsoft Graph API.
+This sample shows how to connect an ASP.NET 4.6 MVC web app using a Microsoft work or school (Azure Active Directory) account to the Microsoft Graph security API to retrieve security Alerts, update an Alert, create Security Actions and retrieve them, subscribe to Alert notifications, and also a sample listener for Alert notifications. The sample gets additional context into a User's Risk profile by tapping into the RiskyUsers API in Azure Active Directory Identity Protection. It uses SDK and REST calls to interact with the Microsoft Graph API.
 
 The sample uses the [Microsoft Authentication Library (MSAL)](https://www.nuget.org/packages/Microsoft.Identity.Client/) for authentication. The MSAL SDK provides features for working with the [Azure AD v2.0 endpoint](https://azure.microsoft.com/en-us/documentation/articles/active-directory-appmodel-v2-overview) that enables developers to write a single code flow that handles authentication for both work or school (Azure Active Directory) accounts.
 
@@ -34,7 +36,7 @@ This sample requires the following:
 
 ## Getting started with sample
 
- 1. Download or clone the Microsoft Graph Security API Sample for ASP.NET 4.6 (REST).
+ 1. Download or clone [this](https://github.com/Microsoft/securitydev) repo. 
 
 ### Register the application
 
@@ -284,14 +286,12 @@ You can change the order at any time at your discretion.
 We'd love to get your feedback about this sample! 
 Please send us your questions and suggestions in the [Issues](https://github.com/microsoftgraph/aspnet-connect-rest-sample/issues) section of this repository.
 
-Your feedback is important to us. Connect with us on [Stack Overflow](https://stackoverflow.com/questions/tagged/microsoftgraph). 
-Tag your questions with [MicrosoftGraph].
 
 ## Additional resources
 
 - [Microsoft Graph Security API Documentaion](https://aka.ms/graphsecuritydocs)
-- [Other Microsoft Graph Connect samples](https://github.com/MicrosoftGraph?utf8=%E2%9C%93&query=-Connect)
+- [Azure Active Directory Identity Protection API Documentation](https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/graph-get-started)
 - [Microsoft Graph overview](https://graph.microsoft.io)
 
 ## Copyright
-Copyright &copy; 2018 Microsoft. All rights reserved.
+Copyright &copy; 2019 Microsoft. All rights reserved.
