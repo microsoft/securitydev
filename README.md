@@ -11,26 +11,26 @@ Feedback / Questions / Bugs to report? File [issues](https://github.com/Microsof
 * Read the [Getting started as a Microsoft security developer whitepaper](https://aka.ms/securitydevwhitepaper)
 
 # Discover APIs and Services  
-<table BORDER="1" CELLPADDING="10">
+<table BORDER="1" CELLPADDING="10" class="myTable">
     <thead>
         <col>
         <colgroup span="6"></colgroup>
-        <tr>
-            <th rowspan="2" scope="col">APIs</th>
-            <th colspan="6" scope="colgroup">INTEGRATION OPTIONS / SERVICES</th>
+        <tr style="background-color:DarkOrange;">
+            <th rowspan="2" scope="col" style="min-width: 7em;"><h3>APIs</h3></th>
+            <th colspan="6" scope="colgroup"><h3>INTEGRATION OPTIONS</h3></th>
         </tr>
-        <tr>
+        <tr style="background-color:DarkOrange;">
             <th>SDK</th>
-            <th>Azure Sentinel Data Connector/Dashboard</th>
-            <th>Logic Apps/Flow/PowerApps Connector</th>
-            <th>PowerShell Module</th>
-            <th>Power BI Connector</th>
-            <th>Jupyter Notebooks<th>
+            <th><a href="https://docs.microsoft.com/azure/sentinel/">Azure Sentinel</a> Data Connector/ Dashboard</th>
+            <th><a href="https://azure.microsoft.com/services/logic-apps/">Logic Apps</a> / <a href="https://flow.microsoft.com/">Flow</a> / <a href="https://powerapps.microsoft.com/">PowerApps</a> Connector</th>
+            <th><a href="https://docs.microsoft.com/powershell/">PowerShell</a> Module</th>
+            <th><a href="https://powerbi.microsoft.com/">Power BI</a> Connector</th>
+            <th><a href="https://docs.microsoft.com/azure/notebooks/">Azure</a> / <a href="https://jupyter.org/">Jupyter</a> Notebooks</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody >
         <tr>
-            <td>
+            <td >
                 <a href="https://docs.microsoft.com/graph/security-concept-overview">Microsoft Graph Security API</a><br>unified alerts for <b>all Microsoft security services</b>, threat indicators, actions, and secure score
             </td>
             <td align="center">&#10003;</td>
