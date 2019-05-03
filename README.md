@@ -20,7 +20,7 @@ Feedback / Questions / Bugs to report? File [issues](https://github.com/Microsof
             <th colspan="6" scope="colgroup"><h3>INTEGRATION OPTIONS</h3></th>
         </tr>
         <tr style="background-color:DarkOrange;">
-            <th>SDK</th>
+            <th>&nbsp;&nbsp;&nbsp;SDK&nbsp;&nbsp;&nbsp;</th>
             <th><a href="https://docs.microsoft.com/azure/sentinel/">Azure Sentinel</a> Data Connector/ Dashboard</th>
             <th><a href="https://azure.microsoft.com/services/logic-apps/">Logic Apps</a> / <a href="https://flow.microsoft.com/">Flow</a> / <a href="https://powerapps.microsoft.com/">PowerApps</a> Connector</th>
             <th><a href="https://docs.microsoft.com/powershell/">PowerShell</a> Module</th>
